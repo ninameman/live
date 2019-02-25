@@ -1,103 +1,126 @@
 # SDK集成 {#concept_drc_txx_pfb .concept}
 
-本文介绍Android推流SDK的集成。
+本文介绍Android推流SDK的快速上手集成。
 
-## SDK信息 {#section_slj_dxk_nfb .section}
+## 集成环境 {#section_slj_dxk_nfb .section}
 
-下载后的 **SDK** 目录：
+ **硬性要求** 
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20914/154088455613965_zh-CN.png)
+|名称|要求|
+|:-|:-|
+|Android系统版本|\>= Android 4.3|
+|最小Android API版本|Jelly Bean \(API 18\)|
+|CPU架构支持|ARM64、ARMV7|
+|集成工具|Android Studio|
 
--   **AlivcLivePusherSDK** 目录：不带阿里云播放器。
-    -   **aarlibs** 目录：
+**非硬性要求**
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20914/154088455613966_zh-CN.png)
+仅仅是开发此Demo时的开发环境, 目的是为了给编译运行源码的人员提供参考
 
-    -   **jniLibs** 目录：
+|名称|要求|
+|:-|:-|
+|Android Studio版本|3.2.1|
+|JRE:|1.8.0\_152-release-1136-b06 amd64|
+|JVM:|OpenJDK 64-Bit|
+|compileSdkVersion|26|
+|buildToolsVersion|26.0.2|
+|minSdkVersion|18|
+|targetSdkVersion|26|
+|gradle version|gradle-4.4-all|
+|gradle plugin version|com.android.tools.build:gradle:3.0.1|
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20914/154088455613967_zh-CN.png)
+## 推流SDK下载 {#section_c4f_cyx_pfb .section}
 
-    -   **libs** 目录：
+阿里云官网Android版 [推流SDK下载](../../../../../cn.zh-CN/SDK下载/SDK下载.md#section_sxd_wpk_nfb)，推流SDK包含在解压包的AlivcLivePusher文件夹中，如下图所示：
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20914/154088455613968_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/155106679939285_zh-CN.png)
 
-    -   **obj** 目录\(用于定位底层问题\)：
+上图中的文件内容作用如下：
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20914/154088455613969_zh-CN.png)
+|文件目录|文件名称|文件说明|
+|:---|:---|:---|
+|demo|AlivcLivePusherDemo|推流SDK演示Demo源代码工程|
+|doc|api.zip|推流SDK API JavaDoc|
+|sdk|AlivcLivePusherSDK|不带阿里云播放器的推流SDK|
+|AlivcLivePusherSDK+AliyunPlayerSDK|带阿里云播放器的推流SDK|
 
--   **AlivcLivePusherSDK+AliyunPlayerSDK** 目录：带阿里云播放器。
-    -   **aarlibs** 目录：
+上表中的sdk文件夹中的文件作用如下：
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20914/154088455613970_zh-CN.png)
+|文件目录|文件说明|
+|:---|:---|
+|aarlibs|推流SDK所包含的各个组件aar包|
+|jnilibs|推流SDK所包含的所有动态库包，分为arm64-v8a、armeabi-v7a。|
+|libs|推流SDK所包含的各个组件jar包|
+|obj|推流SDK所包含的动态库，用于定位底层问题。|
 
-    -   **jniLibs** 目录：
+**说明：** 
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20914/154088455613971_zh-CN.png)
+-   可根据SDK包中的文件选择集成方式，采用aar集成或采用jar包+so集成。
+-   使用背景音乐功能时必须集成播放器sdk\(AlivcPlayer.aar\)。
 
-    -   **libs** 目录：
+## 运行推流Demo {#section_uld_dyx_pfb .section}
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20914/154088455613972_zh-CN.png)
+将AlivcLivePusherDemo工程导入到Android Studio中，如下图所示：
 
-    -   **obj** 目录\(用于定位底层问题\)：
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/155106679939289_zh-CN.png)
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20914/154088455613973_zh-CN.png)
+导入工程成功后，即可直接运行工程查看Demo效果。效果如下：
 
-        **说明：** 
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/155106679939290_zh-CN.png)
 
-        -   集成方式分两种，一种采用aar集成，另一种采用jar包+so集成，选择其一即可。
-        -   使用背景音乐功能时必须集成播放器sdk\(AlivcPlayer.aar\)，采用aar集成方式时需要同时引入播放器SDK的aar；采用jar包+so集成时，可以在application层引入播放器SDK的aar。v3.2.0+添加了调试工具\(live-pusher-resources.aar\), 用法同AlivcPlayer.aar。AlivcReporter.aar也使用同样的方法引用。
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/155106679939291_zh-CN.png)
 
-## 系统要求 {#section_c4f_cyx_pfb .section}
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/155106679939292_zh-CN.png)
 
--   SDK支持Android 4.3及以上版本
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/155106679939293_zh-CN.png)
 
--   硬件CPU支持ARM64、ARMV7
+推流url中填入有效的推流rtmp地址，推流成功后，拉流观看的效果可以使用阿里云播放器SDK、ffplay、VLC等工具查看。
 
+## 推流SDK集成 {#section_nhh_4cd_wgb .section}
 
-## 运行环境 {#section_uld_dyx_pfb .section}
+1.  使用aar的集成方式
 
--   SDK编译支持Android 4.3及以上版本
-
--   Android Studio 2.3及以上版本
-
--   APP开发环境与SDK保持兼容即可。
-
--   Android SDK Tools: android-sdk\_25.0.0
-
-    -   minSdkVersion 18
-
-    -   targetSdkVersion 23
-
-
-## SDK集成 {#section_vf2_fyx_pfb .section}
-
-下载SDK包，点击 [SDK下载](https://help.aliyun.com/document_detail/45270.html?spm=a2c4g.11186623.2.30.6284161cvDZvBu)。
-
-1.  Android Studio 新建工程：
-
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20914/154088455613974_zh-CN.png)
-
-2.  copy JAR包和SO库：
-
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20914/154088455613975_zh-CN.png)
-
-3.  工程配置：
-
-    ```
-    dependencies {
-     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    }
-    ```
-
-    jniLibs 目录为默认so存放位置。如果自己设置位置，需要在app的build.gradle中配置：
+    将所有SDK目录下文件拷贝到自己工程对应lib目录下，并修改主模块\(一般是app \) 的build.gradle中的 dependencies，然后同步工程，代码如下：
 
     ```
-    sourceSets{ 
-    main{ 
-       jniLibs.srcDirs = ['libs'] 
-    } 
-    }
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
     ```
 
-4.  编译工程 Rebuild Project。
+2.  使用jar+so的集成方式
+
+    将SDK包下的jnilibs中的包拷贝到工程目录libs目录下，再将SDK包下的libs中的包拷贝到工程目录下jnilibs目录下，并在build.gradle中添加上相关的依赖，类似aar集成方式，具体如下图所示：
+
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/155106680039305_zh-CN.png)
+
+3.  添加请求权限
+
+    在AndroidManifest文件下添加如下代码：
+
+    ```
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    ```
+
+    **说明：** 请您记得添加录音权限和相机权限。
+
+4.  添加混淆规则
+
+    在proguard-rules.pro文件下添加如下代码：
+
+    ```
+    -keep class com.alibaba.livecloud.** { *;}
+    -keep class com.alivc.** { *;}
+    ```
+
+5.  具体使用说明
+
+    具体SDK的API使用请参考推流Android SDK的使用说明文档，API的详细注释说明请参考SDK包里的API JavaDoc文档。
+
 
