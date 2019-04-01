@@ -4,22 +4,22 @@
 
 ## **客户端SDK下载** {#section_sxd_wpk_nfb .section}
 
-|功能特性|[推流SDK](../../../../../intl.zh-CN/推流SDK/产品介绍.md#)|播放器SDK|互动直播SDK|全功能SDK|
-|:---|:------------------------------------------------------------------------------|:-----|:------|:-----|
-|RTMP推流|√| |√|√|
-|直播播放| |√|√|√|
-|点播播放| |√|√|√|
-|录屏直播|√| | |√|
-|基础美颜|√| |√|√|
-|高级美颜（第三方）|√| | |√|
-|视频录制| | | |√|
-|视频编辑| | | |√|
-|视频裁剪| | | |√|
-|魔法相机| | | |√|
-|人脸贴图| | | |√|
-|视频上传| | | |√|
-|iOS下载|[V3.4.0](http://vod-download.cn-shanghai.aliyuncs.com/sdk/pusher/AlivcLivePusher_v3.4.0_iOS.zip)|[V3.4.9](https://vod-download.cn-shanghai.aliyuncs.com/sdk/player/3.4.9/ApsaraVideo_videoPlay_v3.4.9_iOS_20190104.zip)|[V1.2.2](http://vod-download.cn-shanghai.aliyuncs.com/sdk/interactiveLive/AlivcInteractive_v1.2.2_iOS.zip)|[V1.0.0](https://vod-download.cn-shanghai.aliyuncs.com/sdk/ApsaraVideo/ApsaraVideo_iOS_20180712.zip)|
-|Android下载|[V3.4.0](http://vod-download.cn-shanghai.aliyuncs.com/sdk/pusher/AlivcLivePusher_v3.4.0_Android.zip)|[V3.4.9](https://vod-download.cn-shanghai.aliyuncs.com/sdk/player/3.4.9/ApsaraVideo_videoPlay_v3.4.9_Android_20190104.zip)|[V1.2.2](http://vod-download.cn-shanghai.aliyuncs.com/sdk/interactiveLive/AlivcInteractive_v1.2.2_android.zip)|[V1.0.0](https://vod-download.cn-shanghai.aliyuncs.com/sdk/ApsaraVideo/ApsaraVideo_20180712.zip)|
+|功能特性|[推流SDK](../../../../../intl.zh-CN/推流SDK/产品介绍.md#)|播放器SDK|全功能SDK|
+|:---|:------------------------------------------------------------------------------|:-----|:-----|
+|RTMP推流|√| |√|
+|直播播放| |√|√|
+|点播播放| |√|√|
+|录屏直播|√| |√|
+|基础美颜|√| |√|
+|高级美颜（第三方）|√| |√|
+|视频录制| | |√|
+|视频编辑| | |√|
+|视频裁剪| | |√|
+|魔法相机| | |√|
+|人脸贴图| | |√|
+|视频上传| | |√|
+|iOS下载|[V3.4.0](http://vod-download.cn-shanghai.aliyuncs.com/sdk/pusher/AlivcLivePusher_v3.4.0_iOS.zip)|[V3.4.9](https://vod-download.cn-shanghai.aliyuncs.com/sdk/player/3.4.9/ApsaraVideo_videoPlay_v3.4.9_iOS_20190104.zip)|[V1.0.0](https://vod-download.cn-shanghai.aliyuncs.com/sdk/ApsaraVideo/ApsaraVideo_iOS_20180712.zip)|
+|Android下载|[V3.4.0](http://vod-download.cn-shanghai.aliyuncs.com/sdk/pusher/AlivcLivePusher_v3.4.0_Android.zip)|[V3.4.9](https://vod-download.cn-shanghai.aliyuncs.com/sdk/player/3.4.9/ApsaraVideo_videoPlay_v3.4.9_Android_20190104.zip)|[V1.0.0](https://vod-download.cn-shanghai.aliyuncs.com/sdk/ApsaraVideo/ApsaraVideo_20180712.zip)|
 
 **说明：** 
 
