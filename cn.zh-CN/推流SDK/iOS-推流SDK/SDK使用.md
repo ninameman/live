@@ -35,7 +35,7 @@
 
 ## 引入头文件 {#section_kgd_kjk_wgb .section}
 
-在代码中引入以下头文件便可使用互动直播的所有API和类对象。
+在代码中引入以下头文件便可使用直播推流的所有API和类对象。
 
 ```
 #import <AlivcLivePusher/AlivcLivePusherHeader.h>
@@ -350,7 +350,7 @@ SDK 初始化主要包括以下几个步骤：
 
     首先需要在app 的Capabilities中打开Background Modes 中的Audio，AirPlay，and Picture in Picture 模式，支持后台音频访问，保持app在后台工作。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40320/155106686021048_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40320/155418917921048_zh-CN.png)
 
     当app进入后台的时候，目前SDK已经侦听了该系统通知，并对推流做暂停处理，此时推流行为和暂停表现一致，也就是只推音频，不推视频，如果设置了背景图片的话视频推背景图片。App不用做任何处理，会自动在后台推流。
 
@@ -834,23 +834,23 @@ iOS 系统从iOS11版本开始的replaykit2中增加了系统录屏直播的功�
 
     在APP中创建新的target，选择 Broadcast Upload Extension, 创建该App 对应的录屏直播扩展。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40320/155106686021049_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40320/155418917921049_zh-CN.png)
 
     创建成功后，会在工程项目中出现以下扩展相关内容。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40320/155106686021051_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40320/155418917921051_zh-CN.png)
 
     此时运行安装APP后，该扩展会一起和APP安装到手机上。
 
     如下图，打开系统录屏菜单，找到录屏按钮。如果找不到录屏按钮，请在设置 \> 控制中心 \> 自定控制中添加"屏幕录制"选项。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40320/155106686021052_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40320/155418917921052_zh-CN.png)
 
     长按录屏按钮后会跳出选项，刚刚创建的录屏扩展就在选项中，选中扩展，按下开始直播按钮，通过debug就会发现系统开始录屏并将录屏的音视频数据通过SampleHandler.m 中的接口processSampleBuffer回调给录屏扩展。
 
 2.  录屏扩展对接阿里云推流SDK
 
-    当录屏扩展能够接收到录屏的音视频数据后，下一步就是通过阿里云直播SDK就录屏数据直播出去，在扩展中加载互动直播SDK头文件并初始化 AlivcLivePushConfig 和AlivcLivePusher对象。注意因为录屏直播使用的是系统推送的音视频数据进行推流直播，所以在配置直播config时，需要打开外部数据推流设置。
+    当录屏扩展能够接收到录屏的音视频数据后，下一步就是通过阿里云直播SDK就录屏数据直播出去，在扩展中加载直播SDK头文件并初始化 AlivcLivePushConfig 和AlivcLivePusher对象。注意因为录屏直播使用的是系统推送的音视频数据进行推流直播，所以在配置直播config时，需要打开外部数据推流设置。
 
     开启录屏直播示例代码如下：
 
@@ -1167,7 +1167,7 @@ if(self.livePusher) {
     -   SDK接口都会在发生错误或者调用顺序不对时 thorws 出异常，调用时注意添加try catch 处理，否则会造成程序的crash。
     -   接口调用顺序，如下图所示：
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40320/155106686021053_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40320/155418918021053_zh-CN.png)
 
 -   关于包大小
     -   SDK大小为23.9MB。
