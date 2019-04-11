@@ -28,7 +28,7 @@ sudo pip uninstall aliyun-python-sdk-live
 
 以 DescribeLiveStreamsFrameRateAndBitRateData接口为例。
 
-以下是 SDK 中的 `DescribeLiveStreamsFrameRateAndBitRateDataRequest.py`
+以下是SDK中的`DescribeLiveStreamsFrameRateAndBitRateDataRequest.py`
 
 ```
 # Licensed to the Apache Software Foundation (ASF) under one
@@ -83,35 +83,35 @@ class DescribeLiveStreamsFrameRateAndBitRateDataRequest(RpcRequest):
         self.add_query_param('EndTime',EndTime)
 ```
 
-该文件中对于 DescribeLiveStreamsFrameRateAndBitRateDataRequest这个类，有若干组一一对应的 `get_X` 和 `set_X` 方法，分别用于设定该 API 请求的参数，具体每一个请求参数对应的意义，您可以在阿里云官网的直播 API 文档中找到。
+该文件中对于DescribeLiveStreamsFrameRateAndBitRateDataRequest这个类，有若干组一一对应的`get_X`和`set_X`方法，分别用于设定该 API 请求的参数，具体每一个请求参数对应的意义，您可以在阿里云官网的直播 API 文档中找到。
 
 ## SDK使用 {#section_kbv_4c2_qfb .section}
 
-以 `v20161101` 版本为例。
+以`v20161101`版本为例。
 
-以调用 DescribeLiveStreamsFrameRateAndBitRateDataRequest接口为例。
+以调用DescribeLiveStreamsFrameRateAndBitRateDataRequest接口为例。
 
 ```
 # 引入aliyunsdkcore包
 from aliyunsdkcore import client
-# 入 aliyunsdklie 包
+# 引入aliyunsdklie包
 from aliyunsdklive.request.v20161101 import DescribeLiveStreamsFrameRateAndBitRateDataRequest
-#初始化 clie t
-# AK 和 Secrect 需要自己提供 (可以在阿里云控制台中找到)
-# 以访问 cn-hangzhou region 为例
+# 初始化client
+# AK和Secrect需要自己提供(可以在阿里云控制台中找到)
+# 以访问cn-hangzhou region为例
 clt = client.AcsClient(AK, Secret, 'cn-hangzhou')
-#构造需发起的 API 请求调用
+# 构造需发起的API请求调用
 request = DescribeLiveStreamsFrameRateAndBitRateDataRequest()
 request.set_DomainName('qt1.alivecdn.com')
 request.set_AppName('caster')
 request.set_StreamName('cc8d5e157f5d4146afd091e246efd1f6')
 # 发起请求
 result = clt.do_action_with_exception(request)
-# 看求结果
- result 为 请求果的 ResponseBody 字符串
-print rsult
- 如果您需要进一步对 result 进行处理, 您可以根据每个接口的返回格式, 进行格式化处理并进一步分析或使用
-# 对于 DescribeLiveStreamsFrameRateAndBitRateDataRequest 来说, 它返回一个 json 格式的数据, 我们可以用 json 包来处理这些response
+# 请求结果
+# result为请求结果的ResponseBody字符串
+print result
+# 如果您需要进一步对result进行处理,可以根据每个接口的返回格式,进行格式化处理并进一步分析或使用
+# 对于DescribeLiveStreamsFrameRateAndBitRateDataRequest来说,它返回一个json格式的数据,我们可以用json包来处理这些response
 import json
 x = json.loads(result)
 print x['RequestId']
