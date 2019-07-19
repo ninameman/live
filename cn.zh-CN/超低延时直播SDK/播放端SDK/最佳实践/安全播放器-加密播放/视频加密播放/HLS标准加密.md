@@ -4,7 +4,7 @@
 
 HLS标准加密支持 HTTP Live Streaming 中规定的通用加密方案，使用AES-128对视频内容本身进行加密，同时能支持所有的HLS播放器，用户可选择使用自研或开源的播放器。相比私有加密方案，灵活性更好，但使用门槛更高、安全性更低。HLS标准加密流程如下图所示。
 
-![HLS标准加密流程](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/987747/156350753952193_zh-CN.png)
+![HLS标准加密流程](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/987747/156350755752193_zh-CN.png)
 
 -   用户需搭建密钥管理服务，提供密钥生成（用于转码时对视频内容进行加密）和解密服务（用于播放时获取解密密钥），也可基于 阿里云KMS 进行封装。
 -   用户需提供令牌颁发服务，用于验证播放端的身份，避免解密密钥被非法获取，此处为关键点，处理不好会千里之堤溃于蚁穴。
