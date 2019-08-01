@@ -1,44 +1,65 @@
-# DeleteLiveDomainMapping {#concept_88783_zh .concept}
+# DeleteLiveDomainMapping {#doc_api_live_DeleteLiveDomainMapping .reference}
 
-删除直播域名播流域名和推流域名映射关系配置。
+调用DeleteLiveDomainMapping删除直播域名播流域名和推流域名的映射关系配置。
 
-## 请求参数 {#section_udb_gl1_dfb .section}
+## 调试 {#api_explorer .section}
 
-|参数|类型|是否必选|描述|
-|:-|:-|:---|:-|
-|Action|String|是|操作接口名，系统规定参数，取值：DeleteLiveDomainMapping|
-|PushDomain|String|是|您的推流域名，域名类型需为liveEdge|
-|PullDomain|String|是|您的播流域名，域名类型需为liveVideo|
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=live&api=DeleteLiveDomainMapping&type=RPC&version=2016-11-01)
 
-## 返回参数 {#section_a2b_gl1_dfb .section}
+## 请求参数 {#parameters .section}
 
-|名称|类型|描述|
-|:-|:-|:-|
-|RequestId|String|该条任务请求ID|
+|名称|类型|是否必选|示例值|描述|
+|--|--|----|---|--|
+|Action|String|是|DeleteLiveDomainMapping|系统规定参数，取值：**DeleteLiveDomainMapping**。
 
-## 示例 {#section_zcx_4j1_dfb .section}
+ |
+|PullDomain|String|是|pull.yourdomain.com|您的播流域名，域名类型为**liveVideo**。
+
+ |
+|PushDomain|String|是|push.yourdomain.com|您的推流域名，域名类型为**liveEdge**。
+
+ |
+
+## 返回数据 {#resultMapping .section}
+
+|名称|类型|示例值|描述|
+|--|--|---|--|
+|RequestId|String|16A96B9A-F203-4EC5-8E43-CB92E68F4CD8|请求ID
+
+ |
+
+## 示例 {#demo .section}
 
 请求示例
 
-```
- https://live.aliyuncs.com?Action=DeleteLiveDomainMapping&PushDomain=test101.cdnpe.com&PullDomain=test102.cdnpe.com&<公共请求参数>
+``` {#request_demo}
+
+http(s)://live.aliyuncs.com/?Action=DeleteLiveDomainMapping
+&PullDomain=pull.yourdomain.com
+&PushDomain=push.yourdomain.com
+&<公共请求参数>
+
 ```
 
-返回示例
+正常返回示例
 
-JSON格式
+`XML` 格式
 
+``` {#xml_return_success_demo}
+<DeleteLiveDomainMappingResponse>
+	  <RequestId>16A96B9A-F203-4EC5-8E43-CB92E68F4CD8</RequestId>
+</DeleteLiveDomainMappingResponse>
 ```
+
+`JSON` 格式
+
+``` {#json_return_success_demo}
 {
-    "RequestId": "16A96B9A-F203-4EC5-8E43-CB92E68F4CD8", 
+	"RequestId":"16A96B9A-F203-4EC5-8E43-CB92E68F4CD8"
 }
 ```
 
-## 特殊错误码 {#section_f2b_gl1_dfb .section}
+## 错误码 { .section}
 
-|错误代码|描述|Http 状态码|语义|
-|:---|:-|:-------|:-|
-|InvalidPushDomain.Miss|The specified value of parameter PushDomain is miss.|400|推流域名缺失|
-|InvalidPullDomain.Miss|The specified value of parameter PullDomain is miss.|400|播流域名缺失|
-|DomainType.Malformed|Your domain type is not live type.|400|业务类型非直播类型|
+访问[错误中心](https://error-center.aliyun.com/status/product/live)查看更多错误码。
 
