@@ -1,57 +1,73 @@
-# ResumeLiveStream {#concept_35414_zh .concept}
+# ResumeLiveStream {#doc_api_live_ResumeLiveStream .reference}
 
-恢复某条流的推送。
+调用ResumeLiveStream恢复某条流的推送。
 
-## 请求参数 {#section_k4f_qm1_dfb .section}
+## 调试 {#api_explorer .section}
 
-|参数|类型|是否必选|示例值|描述|
-|:-|:-|:---|:--|:-|
-|Action|String|是|ResumeLiveStream|系统规定参数。取值：ResumeLiveStream|
-|AppName|String|是|testApp|应用名称。|
-|DomainName|String|是|www.yourdomain.com|您的加速域名。|
-|LiveStreamType|String|是|publisher|用于指定主播推流还是客户端拉流，目前支持“publisher”（主播推送）。|
-|StreamName|String|是|testStream|流名称。|
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=live&api=ResumeLiveStream&type=RPC&version=2016-11-01)
 
-## 返回参数 {#section_p4f_qm1_dfb .section}
+## 请求参数 {#parameters .section}
+
+|名称|类型|是否必选|示例值|描述|
+|--|--|----|---|--|
+|Action|String|是|ResumeLiveStream|系统规定参数。取值：**ResumeLiveStream**。
+
+ |
+|AppName|String|是|testApp|应用名称。
+
+ |
+|DomainName|String|是|www.yourdomain.com|您的加速域名。
+
+ |
+|LiveStreamType|String|是|publisher|用于指定主播推流还是客户端拉流，目前支持“publisher”（主播推送）。
+
+ |
+|StreamName|String|是|testStream|流名称。
+
+ |
+
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
-|:-|:-|:--|:-|
-|RequestId|String|40A4F36D-A7CC-473A-88E7-154F92242566|该条任务请求ID|
+|--|--|---|--|
+|RequestId|String|16BFE188-B193-4C3C-ADC5-79A7E31486EA|请求ID
 
-## 示例 {#section_zcx_4j1_dfb .section}
+ |
+
+## 示例 {#demo .section}
 
 请求示例
 
-```
-https://live.aliyuncs.com/?Action=ResumeLiveStream&DomainName=test101.aliyunlive.com&AppName=app&StreamName=stream1&<公共请求参数> 
-```
+``` {#request_demo}
 
-**说明：** 关于公共请求参数详细内容，参见 [公共请求参数](cn.zh-CN/API参考/调用方式/公共参数.md#)。
+http(s)://live.aliyuncs.com/?Action=ResumeLiveStream
+&AppName=testApp
+&DomainName=www.yourdomain.com
+&LiveStreamType=publisher
+&StreamName=testStream
+&<公共请求参数>
+
+```
 
 正常返回示例
 
-JSON格式
+`XML` 格式
 
+``` {#xml_return_success_demo}
+<ResumeLiveStreamResponse>
+	  <RequestId>16BFE188-B193-4C3C-ADC5-79A7E31486EA</RequestId>
+</ResumeLiveStreamResponse>
 ```
+
+`JSON` 格式
+
+``` {#json_return_success_demo}
 {
-    "RequestId":"16BFE188-B193-4C3C-ADC5-79A7E31486EA"
+	"RequestId":"16BFE188-B193-4C3C-ADC5-79A7E31486EA"
 }
 ```
 
-异常返回示例
+## 错误码 { .section}
 
-JSON格式
-
-```
-{
-    "Code":"InternalError",
-    "HostId":"live.aliyuncs.com",
-    "Message":"The request processing has failed due to some unknown error.",
-    "RequestId":"6EBD1AC4-C34D-4AE1-963E-B688A228BE31"
-}
-```
-
-## 错误码 {#section_v4f_qm1_dfb .section}
-
-[查看本产品错误码](https://error-center.aliyun.com/status/product/live)
+访问[错误中心](https://error-center.aliyun.com/status/product/live)查看更多错误码。
 
