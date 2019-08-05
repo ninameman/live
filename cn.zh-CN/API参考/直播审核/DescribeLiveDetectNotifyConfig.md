@@ -1,60 +1,82 @@
-# DescribeLiveDetectNotifyConfig {#reference1187 .reference}
+# DescribeLiveDetectNotifyConfig {#doc_api_live_DescribeLiveDetectNotifyConfig .reference}
 
-查询回调通知 URL。
+调用DescribeLiveDetectNotifyConfig查询回调通知URL。
 
-## 请求参数 {#section_k4f_qm1_dfb .section}
+## 调试 {#api_explorer .section}
 
-|参数|类型|是否必选|示例值|描述|
-|:-|:-|:---|:--|:-|
-|Action|String|是|DescribeLiveDetectNotifyConfig|系统规定参数。取值：DescribeLiveDetectNotifyConfig|
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=live&api=DescribeLiveDetectNotifyConfig&type=RPC&version=2016-11-01)
 
-## 返回参数 {#section_p4f_qm1_dfb .section}
+## 请求参数 {#parameters .section}
+
+|名称|类型|是否必选|示例值|描述|
+|--|--|----|---|--|
+|Action|String|是|DescribeLiveDetectNotifyConfig|系统规定参数。取值：**DescribeLiveDetectNotifyConfig**
+
+ |
+|DomainName|String|是|www.yourdomain.com|用户域名。
+
+ |
+
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
-|:-|:-|:--|:-|
-|RequestId|String|16A96B9A-F203-4EC5-8E43-CB92E68F4CD8|该条任务请求ID。|
-|LiveDetectNotifyConfig| | |回调配置，只在正确返回时有。|
-|  └DomainName|String|live.aliyunlive.com|用户域名。|
-|  └NotifyUrl|String|[http://callback.com](http://callback.com/)|通知回调。|
+|--|--|---|--|
+|RequestId|String|16A96B9A-F203-4EC5-8E43-CB92E68F4CD8|请求ID。
 
-## 示例 {#section_zcx_4j1_dfb .section}
+ |
+|LiveDetectNotifyConfig| | |回调配置，只在正确返回时有。
+
+ |
+|DomainName|String|live.aliyunlive.com|用户域名。
+
+ |
+|NotifyUrl|String|http://callback.com|通知回调。
+
+ |
+
+## 示例 {#demo .section}
 
 请求示例
 
-```
-https://live.aliyuncs.com/?Action=DescribeLiveDetectNotifyConfig&DomainName=live.aliyunlive.com<公共请求参数> 
-```
+``` {#request_demo}
 
-**说明：** 关于公共请求参数详细内容，参见 [公共请求参数](cn.zh-CN/API参考/调用方式/公共参数.md#)。
+http(s)://live.aliyuncs.com/?Action=DescribeLiveDetectNotifyConfig
+&DomainName=www.yourdomain.com
+&<公共请求参数>
+
+```
 
 正常返回示例
 
-JSON格式
+`XML` 格式
 
+``` {#xml_return_success_demo}
+<DescribeLiveDetectNotifyConfigResponse>
+	  <LiveDetectNotifyConfig>
+		    <DomainName>live.aliyunlive.com</DomainName>
+		    <NotifyUrl>http://callback.com</NotifyUrl>
+	  </LiveDetectNotifyConfig>
+	  <RequestId>16A96B9A-F203-4EC5-8E43-CB92E68F4CD8</RequestId>
+</DescribeLiveDetectNotifyConfigResponse>
 ```
+
+`JSON` 格式
+
+``` {#json_return_success_demo}
 {
-    "LiveDetectNotifyConfig":{
-        "DomainName":"live.aliyunlive.com",
-        "NotifyUrl":"http://callback.com"
-    },
-    "RequestId":"16A96B9A-F203-4EC5-8E43-CB92E68F4CD8"
+	"RequestId":"16A96B9A-F203-4EC5-8E43-CB92E68F4CD8",
+	"LiveDetectNotifyConfig":{
+		"NotifyUrl":"http://callback.com",
+		"DomainName":"live.aliyunlive.com"
+	}
 }
 ```
 
-异常返回示例
+## 错误码 { .section}
 
-JSON格式
+|HttpCode|错误码|错误信息|描述|
+|--------|---|----|--|
+|404|InvalidConfig.NotFound|Config does not exist.|配置错误，请您确认该配置是否正确。|
 
-```
-{
-    "Code":"InternalError",
-    "HostId":"live.aliyuncs.com",
-    "Message":"The request processing has failed due to some unknown error.",
-    "RequestId":"6EBD1AC4-C34D-4AE1-963E-B688A228BE31"
-}
-```
-
-## 错误码 {#section_ekj_yjh_dfb .section}
-
- [查看本产品错误码](https://error-center.aliyun.com/status/product/live) 
+访问[错误中心](https://error-center.aliyun.com/status/product/live)查看更多错误码。
 
