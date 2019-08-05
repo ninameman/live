@@ -1,90 +1,118 @@
-# DescribeLiveDomainSnapshotData {#reference1799 .reference}
+# DescribeLiveDomainSnapshotData {#doc_api_live_DescribeLiveDomainSnapshotData .reference}
 
-查询直播域名截图张数数据
+调用DescribeLiveDomainSnapshotData查询直播域名截图张数数据。
 
 -   支持用户查询单个直播域名在指定时间区段内的每日截图张数。
+-   支持查询**2018/01/01**起的数据，数据查询的起止时间跨度最大为**90**天。
 
--   支持查询 2018/01/01 起的数据，数据查询的起止时间跨度最大为90天。
+## 调试 {#api_explorer .section}
 
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=live&api=DescribeLiveDomainSnapshotData&type=RPC&version=2016-11-01)
 
-## 请求参数 {#section_k4f_qm1_dfb .section}
+## 请求参数 {#parameters .section}
 
-|参数|类型|是否必选|示例值|描述|
-|:-|:-|:---|:--|:-|
-|Action|String|是|DescribeLiveDomainSnapshotData|系统规定参数。取值：DescribeLiveDomainSnapshotData|
-|DomainName|String|是|www.example.com|需要查询的直播域名。|
-|StartTime|String|是|2018-01-01T00:00:00Z| 获取数据起始时间点。
-
- -   日期格式按照ISO8601表示法，并使用UTC时间。
--   格式为：YYYY-MM-DDThh:mm:ssZ。
--   支持查询2018/01/01起的数据，即 StartTime≥2018-01-01T00:00:00Z。
+|名称|类型|是否必选|示例值|描述|
+|--|--|----|---|--|
+|Action|String|是|DescribeLiveDomainSnapshotData|系统规定参数。取值：**DescribeLiveDomainSnapshotData**。
 
  |
-|EndTime|String|是|2018-01-02T00:00:00Z| 获取数据结束时间。
+|StartTime|String|是|2018-01-01T00:00:00Z|获取数据起始时间点。
 
- -   需大于起始时间。
--   获日期格式按照ISO8601表示法，并使用UTC时间。
--   格式为：YYYY-MM-DDThh:mm:ssZ。
+ 日期格式按照ISO8601表示法，并使用UTC时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+
+ **说明：** 支持查询**2018/01/01**起的数据，即**StartTime**≥`2018-01-01T00:00:00Z`。
+
+ |
+|EndTime|String|是|2018-01-02T00:00:00Z|获取数据结束时间。需大于起始时间。
+
+ 日期格式按照ISO8601表示法，并使用UTC时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+
+ |
+|DomainName|String|否|www.example.com|需要查询的直播域名。
+
+ |
+|RegionId|String|否|cn-shanghai|区域。
 
  |
 
-## 返回参数 {#section_p4f_qm1_dfb .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
-|:-|:-|:--|:-|
-|SnapshotDataInfos| | |直播截图张数的每日数据统计。|
-|  └Date|String|20180209|日期，具体到天。|
-|  └Total|Integer|110|单日截图总张数。|
-|RequestId|String|B955107D-E658-4E77-B913-E0AC3D31693F|请求ID。|
+|--|--|---|--|
+|SnapshotDataInfos| | |直播截图张数的每日数据统计。
 
-## 示例 {#section_zcx_4j1_dfb .section}
+ |
+|Date|String|20180209| 
+
+ 日期，具体到天。
+
+ |
+|Total|Integer|110|单日截图总张数。
+
+ |
+|RequestId|String|B955107D-E658-4E77-B913-E0AC3D31693F|请求ID。
+
+ |
+
+## 示例 {#demo .section}
 
 请求示例
 
-```
- /?Action=DescribeLiveDomainSnapshotData
-&DomainName=www.example.com
-&EndTime=2018-02-09T00:00:00Z
-&StartTime=2018-02-10T00:00:00Z
+``` {#request_demo}
+
+http(s)://[Endpoint]/?Action=DescribeLiveDomainSnapshotData
+&StartTime=2018-01-01T00:00:00Z
+&EndTime=2018-01-02T00:00:00Z
 &<公共请求参数>
+
 ```
 
 正常返回示例
 
-JSON格式
+`XML` 格式
 
+``` {#xml_return_success_demo}
+<DescribeLiveDomainSnapshotDataResponse>
+	  <RequestId>0B250400-6260-4CBC-85BF-FB0ED3753690</RequestId>
+	  <SnapshotDataInfos>
+		    <SnapshotDataInfo>
+			      <Date>20180209</Date>
+			      <Total>110</Total>
+		    </SnapshotDataInfo>
+		    <SnapshotDataInfo>
+			      <Date>20180210</Date>
+			      <Total>310</Total>
+		    </SnapshotDataInfo>
+	  </SnapshotDataInfos>
+</DescribeLiveDomainSnapshotDataResponse>
 ```
+
+`JSON` 格式
+
+``` {#json_return_success_demo}
 {
-    "RequestId":"0B250400-6260-4CBC-85BF-FB0ED3753690",
-    "SnapshotDataInfos":{
-        "SnapshotDataInfo":[
-            {
-                "Date":"20180209",
-                "Total":110
-            },
-            {
-                "Date":"20180210",
-                "Total":310
-            }
-        ]
-    }
-}
-```
-
-异常返回示例
-
-JSON格式
-
-```
-{
-    "Code":"InvalidEndTime.BeyondCurrent",
-    "HostId":"live.aliyuncs.com",
-    "Message":"EndTime beyond current time.",
-    "RequestId":"D561201C-1192-4BCB-BDA9-AD16AA62F6FD"
+	"RequestId":"0B250400-6260-4CBC-85BF-FB0ED3753690",
+	"SnapshotDataInfos":{
+		"SnapshotDataInfo":[
+			{
+				"Date":"20180209",
+				"Total":110
+			},
+			{
+				"Date":"20180210",
+				"Total":310
+			}
+		]
+	}
 }
 ```
 
 ## 错误码 { .section}
 
- [查看本产品错误码](https://error-center.aliyun.com/status/product/live) 
+|HttpCode|错误码|错误信息|描述|
+|--------|---|----|--|
+|400|InvalidStartTime.Malformed|Specified StartTime is malformed.|StartTime参数错误，请您确认该StartTime参数是否正确。|
+|400|InvalidEndTime.Malformed|Specified EndTime is malformed.|结束时间错误，请您确认结束时间是否正确。|
+
+访问[错误中心](https://error-center.aliyun.com/status/product/live)查看更多错误码。
 
