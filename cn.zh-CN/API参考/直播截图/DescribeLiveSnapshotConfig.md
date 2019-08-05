@@ -1,108 +1,162 @@
-# DescribeLiveSnapshotConfig {#reference2722 .reference}
+# DescribeLiveSnapshotConfig {#doc_api_live_DescribeLiveSnapshotConfig .reference}
 
-查询域名下的截图配置。
+调用DescribeLiveSnapshotConfig查询域名下的截图配置。
 
-## 请求参数 {#section_k4f_qm1_dfb .section}
+## 调试 {#api_explorer .section}
 
-|参数|类型|是否必选|示例值|描述|
-|:-|:-|:---|:--|:-|
-|Action|String|是|DescribeLiveSnapshotConfig|系统规定参数。取值：DescribeLiveSnapshotConfig|
-|DomainName|String|是|www.yourdomain.com|您的加速域名。|
-|AppName|String|否|testApp| 直播流所属应用名称。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=live&api=DescribeLiveSnapshotConfig&type=RPC&version=2016-11-01)
 
- \*表示查询针对域名的配置，不传表示查询该域名下所有的配置
+## 请求参数 {#parameters .section}
 
- |
-|Order|String|否|asc|排序。
-
--   asc：升序。
--   desc：降序。
-
-默认值：Asc|
-|PageNum|Integer|否|1| 分页的页码。
-
- 默认值：1
+|名称|类型|是否必选|示例值|描述|
+|--|--|----|---|--|
+|Action|String|是|DescribeLiveSnapshotConfig|系统规定参数。取值：**DescribeLiveSnapshotConfig**。
 
  |
-|PageSize|Integer|否|10| 每页大小。
+|DomainName|String|是|www.yourdomain.com|您的加速域名。
 
- 取值范围：\[5，30\]
+ |
+|AppName|String|否|testApp|直播流所属应用名称。
 
- 默认值：10
+ \*表示查询针对域名的配置，不传表示查询该域名下所有的配置。
+
+ |
+|Order|String|否|asc|排序。取值：
+
+ -   asc（默认值）：升序
+-   desc：降序
+
+ |
+|PageNum|Integer|否|1| 
+
+ 分页的页码。
+
+ 默认值：**1**。
+
+ |
+|PageSize|Integer|否|10|每页大小。取值范围：**5~30**。
+
+ 默认值：**10**。
 
  |
 
-## 返回参数 {#section_p4f_qm1_dfb .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
-|:-|:-|:--|:-|
-|RequestId|String|A3136B58-5876-4168-83CA-B562781981A0|该条任务请求 ID。|
-|LiveStreamSnapshotConfigList| | |截图配置。|
-|  └DomainName|String|xxx|加速域名|
-|  └AppName|String|xxx|直播流所属的应用名称。|
-|  └TimeInterval|Integer|10|截图周期。|
-|  └CreateTime|String|2016-05-20T01:33:38Z|创建时间。|
-|  └OssEndpoint|String|oss-cn-shanghai.aliyuncs.com|OSSEndpoint域名。|
-|  └OssBucket|String|test123|OSSBucket的名称。|
-|  └OverwriteOssObject|String|test123|OSS 存储文件名。|
-|  └SequenceOssObject|String|test123|OSS 存储文件名。|
-|PageNum|Integer|2|分页的页码。|
-|PageSize|Integer|11|每页大小。|
-|Order|String|asc|排序。|
-|TotalPage|Integer|10|总页数。|
-|TotalNum|Integer|6|符合条件的总个数。|
+|--|--|---|--|
+|RequestId|String|A3136B58-5876-4168-83CA-B562781981A0|请求ID。
 
-## 示例 {#section_zcx_4j1_dfb .section}
+ |
+|LiveStreamSnapshotConfigList| | |截图配置。
+
+ |
+|DomainName|String|xxx|加速域名。
+
+ |
+|AppName|String|xxx|直播流所属的应用名称。
+
+ |
+|TimeInterval|Integer|10|截图周期。
+
+ |
+|CreateTime|String|2016-05-20T01:33:38Z|创建时间。
+
+ |
+|OssBucket|String|test123|OssBucket的名称。
+
+ |
+|OssEndpoint|String|oss-cn-shanghai.aliyuncs.com|OssEndpoint域名。
+
+ |
+|OverwriteOssObject|String|test123|OSS存储文件名。
+
+ |
+|SequenceOssObject|String|test123|OSS存储文件名。
+
+ |
+|PageNum|Integer|2|分页的页码。
+
+ |
+|PageSize|Integer|11|每页大小。
+
+ |
+|Order|String|asc|排序。
+
+ |
+|TotalPage|Integer|10|总页数。
+
+ |
+|TotalNum|Integer|6|符合条件的总个数。
+
+ |
+
+## 示例 {#demo .section}
 
 请求示例
 
-```
- https://live.aliyuncs.com/?Action=DescribeLiveSnapshotConfig&DomainName=xxxxx&AppName=xxx&StreamName=xxx<公共请求参数>
-```
+``` {#request_demo}
 
-**说明：** 关于公共请求参数详细内容，参见 [公共请求参数](cn.zh-CN/API参考/调用方式/公共参数.md#)。
+http(s)://live.aliyuncs.com/?Action=DescribeLiveSnapshotConfig
+&DomainName=www.yourdomain.com
+&<公共请求参数>
+
+```
 
 正常返回示例
 
-JSON格式
+`XML` 格式
 
+``` {#xml_return_success_demo}
+<DescribeLiveSnapshotConfigResponse>
+	  <LiveStreamSnapshotConfigList>
+		    <LiveStreamSnapshotConfig>
+			      <AppName>xxx</AppName>
+			      <CreateTime>2016-05-20T01:33:38Z</CreateTime>
+			      <DomainName>xxx</DomainName>
+			      <OssBucket>bucket</OssBucket>
+			      <OssEndpoint>endpoint</OssEndpoint>
+			      <OverwriteOssObject>object</OverwriteOssObject>
+			      <SequenceOssObject>object</SequenceOssObject>
+			      <TimeInterval>10</TimeInterval>
+		    </LiveStreamSnapshotConfig>
+	  </LiveStreamSnapshotConfigList>
+	  <Order>asc</Order>
+	  <PageNum>1</PageNum>
+	  <PageSize>10</PageSize>
+	  <RequestId>A3136B58-5876-4168-83CA-B562781981A0</RequestId>
+	  <TotalNum>100</TotalNum>
+	  <TotalPage>10</TotalPage>
+</DescribeLiveSnapshotConfigResponse>
 ```
+
+`JSON` 格式
+
+``` {#json_return_success_demo}
 {
-    "LiveStreamSnapshotConfigList":{
-        "LiveStreamSnapshotConfig":[{
-            "AppName":"xxx",
-            "CreateTime":"2016-05-20T01:33:38Z",
-            "DomainName":"xxx",
-            "OssBucket":"bucket",
-            "OssEndpoint":"endpoint",
-            "OverwriteOssObject":"object",
-            "SequenceOssObject":"object",
-            "TimeInterval":10
-        }]
-    },
-    "Order":"asc",
-    "PageNum":1,
-    "PageSize":10,
-    "RequestId":"A3136B58-5876-4168-83CA-B562781981A0",
-    "TotalNum":100,
-    "TotalPage":10
+	"TotalPage":10,
+	"TotalNum":100,
+	"PageSize":10,
+	"RequestId":"A3136B58-5876-4168-83CA-B562781981A0",
+	"Order":"asc",
+	"LiveStreamSnapshotConfigList":{
+		"LiveStreamSnapshotConfig":[
+			{
+				"OverwriteOssObject":"object",
+				"SequenceOssObject":"object",
+				"CreateTime":"2016-05-20T01:33:38Z",
+				"DomainName":"xxx",
+				"OssEndpoint":"endpoint",
+				"AppName":"xxx",
+				"OssBucket":"bucket",
+				"TimeInterval":10
+			}
+		]
+	},
+	"PageNum":1
 }
 ```
 
-异常返回示例
+## 错误码 { .section}
 
-JSON格式
-
-```
-{
-    "Code":"InternalError",
-    "HostId":"live.aliyuncs.com",
-    "Message":"The request processing has failed due to some unknown error.",
-    "RequestId":"6EBD1AC4-C34D-4AE1-963E-B688A228BE31"
-}
-```
-
-## 错误码 {#section_h54_bnc_dfb .section}
-
- [查看本产品错误码](https://error-center.aliyun.com/status/product/live) 
+访问[错误中心](https://error-center.aliyun.com/status/product/live)查看更多错误码。
 
