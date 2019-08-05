@@ -182,10 +182,27 @@ http(s)://[Endpoint]/?Action=DescribeLiveStreamsPublishList
 
 ``` {#json_return_success_demo}
 {
-	"Message":"The request processing has failed due to some unknown error.",
-	"RequestId":"6EBD1AC4-C34D-4AE1-963E-B688A228BE31",
-	"HostId":"live.aliyuncs.com",
-	"Code":"InternalError"
+	"DescribeLiveStreamsPublishListResponse":{
+		"TotalPage":"2",
+		"PublishInfo":{
+			"LiveStreamPublishInfo":{
+				"EdgeNodeAddr":"10.175.30.21",
+				"PublishTime":"2015-12-02T03:05:53Z",
+				"StreamName":"testxchen",
+				"StreamUrl":"rtmp://xxx/xxxx",
+				"PublishUrl":"rtmp://test101.cdnpe.com/xchen",
+				"ClientAddr":"10.175.60.33",
+				"StopTime":"2015-12-02T03:11:19Z",
+				"DomainName":"test101.cdnpe.com",
+				"AppName":"xchen",
+				"PublishDomain":"test101.cdnpe.com"
+			}
+		},
+		"TotalNum":"11",
+		"PageSize":"10",
+		"RequestId":"1C0E0C22-77B7-42AC-8212-AF99B2E0077F",
+		"PageNum":"2"
+	}
 }
 ```
 
