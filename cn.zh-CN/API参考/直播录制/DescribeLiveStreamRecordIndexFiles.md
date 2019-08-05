@@ -1,134 +1,202 @@
-# DescribeLiveStreamRecordIndexFiles {#reference3986 .reference}
+# DescribeLiveStreamRecordIndexFiles {#doc_api_live_DescribeLiveStreamRecordIndexFiles .reference}
 
-查询录制索引文件。
+调用DescribeLiveStreamRecordIndexFiles查询某个时间段内的所有录制索引文件。
 
-## 请求参数 {#section_k4f_qm1_dfb .section}
+-   查询时间是UTC。
+-   支持分页与排序。
 
-|参数|类型|是否必选|示例值|描述|
-|:-|:-|:---|:--|:-|
-|Action|String|是|DescribeLiveStreamRecordIndexFiles|系统规定参数。取值：DescribeLiveStreamRecordIndexFiles|
-|AppName|String|是|testApp|直播流所属应用名称。|
-|DomainName|String|是|www.yourdomain.com|您的加速域名。|
-|EndTime|String|是|2017-12-22T08:00:00Z| 结束时间。
+## 调试 {#api_explorer .section}
 
- -   格式：UTC时间。
--   示例：2015-12-01T17:36:00Z。
--   与 StartTime 间隔时间不能超过 4 天。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=live&api=DescribeLiveStreamRecordIndexFiles&type=RPC&version=2016-11-01)
 
- |
-|StartTime|String|是|2017-12-21T08:00:00Z| 开始时间。
+## 请求参数 {#parameters .section}
 
- 格式：UTC时间。
-
- 示例：2015-12-01T17:36:00Z。
+|名称|类型|是否必选|示例值|描述|
+|--|--|----|---|--|
+|Action|String|是|DescribeLiveStreamRecordIndexFiles|系统规定参数。取值：**DescribeLiveStreamRecordIndexFiles**。
 
  |
-|StreamName|String|是|testStream|直播流名称。|
-|Order|String|否|asc|排序。
-
--   asc：升序。
--   desc：降序。
-
-默认值：asc|
-|PageNum|Integer|否|1| 分页的页码。
-
- 默认值：1
+|AppName|String|是|testApp|直播流所属应用名称。
 
  |
-|PageSize|Integer|否|10| 每页大小。
+|DomainName|String|是|www.yourdomain.com|您的加速域名。
 
- 取值范围：\[5，30\]
+ |
+|EndTime|String|是|2017-12-22T08:00:00Z|结束时间。与StartTime间隔时间不能超过4天。
 
- 默认值：10
+ 格式：UTC时间。示例：2015-12-01T17:36:00Z。
+
+ |
+|StartTime|String|是|2017-12-21T08:00:00Z|开始时间。
+
+ 格式：UTC时间。示例：2015-12-01T17:36:00Z。
+
+ |
+|StreamName|String|是|testStream|直播流名称。
+
+ |
+|Order|String|否|asc|排序。取值：
+
+ -   asc（默认值）：升序
+-   desc：降序
+
+ |
+|PageNum|Integer|否|1| 
+
+ 当前页码。默认值为**1**。
+
+ |
+|PageSize|Integer|否|10|每页大小。可取值为**5~30**，默认值为**10**。
 
  |
 
-## 返回参数 {#section_p4f_qm1_dfb .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
-|:-|:-|:--|:-|
-|RecordIndexInfoList| | |录制配置列表。|
-|  └RecordUrl|String|[http://xxx.xxx/atestObject.m3u8](http://xxx.xxx/atestObject.m3u8)|索引文件地址。|
-|  └DomainName|String|test.com|流所属加速域名。|
-|  └AppName|String|test123|流所属应用名称。|
-|  └StreamName|String|test123|直播流名称。|
-|  └StartTime|String|2015-12-01T17:36:00Z| 开始时间。
-
- 格式：2015-12-01T17:36:00Z。
+|--|--|---|--|
+|RecordIndexInfoList| | |录制配置列表。
 
  |
-|  └EndTime|String|2015-12-01T17:36:00Z| 结束时间。
-
- 格式：2015-12-01T17:36:00Z。
+|RecordUrl|String|http://xxx.xxx/atestObject.m3u8|索引文件地址。
 
  |
-|  └Duration|Float|588.849|录制时长。|
-|  └Height|Integer|480|视频高。|
-|  └Width|Integer|640|视频宽。|
-|  └CreateTime|String|2016-05-27T09:40:56Z|创建时间。|
-|  └RecordId|String|c4d7f0a4-b506-43f9-8de3-07732c3f3d82|索引文件 ID。|
-|  └OssBucket|String|test123|OSSBucket的名称。|
-|  └OssEndpoint|String|oss-cn-shanghai.aliyuncs.com|OSSEndpoint域名。|
-|  └OssObject|String|test123|OSSObject。|
-|PageNum|Integer|10|分页的页码。|
-|PageSize|Integer|5|每页大小。|
-|Order|String|asc|排序。|
-|TotalPage|Integer|20|总页数。|
-|TotalNum|Integer|12|符合条件的总个数。|
-|RequestId|String|DE24625C-7C0F-4020-8448-9C31A50C1556|请求ID。|
+|DomainName|String|test.com|流所属加速域名。
 
-## 示例 {#section_zcx_4j1_dfb .section}
+ |
+|AppName|String|testApp|流所属应用名称。
+
+ |
+|StreamName|String|test123|直播流名称。
+
+ |
+|StartTime|String|2015-12-01T17:36:00Z|开始时间，格式：2015-12-01T17:36:00Z。
+
+ |
+|EndTime|String|2015-12-01T17:36:00Z|结束时间，格式：2015-12-01T17:36:00Z。
+
+ |
+|Duration|Float|588.849|录制时长。
+
+ |
+|Height|Integer|480|视频高。
+
+ |
+|Width|Integer|640|视频宽。
+
+ |
+|CreateTime|String|2016-05-27T09:40:56Z|创建时间。
+
+ |
+|OssBucket|String|test123|OssBucket的名称。
+
+ |
+|OssEndpoint|String|oss-cn-shanghai.aliyuncs.com|OssEndpoint域名。
+
+ |
+|OssObject|String|test123|OssObject。
+
+ |
+|RecordId|String|c4d7f0a4-b506-43f9-8de3-07732c3f3d82|索引文件ID。
+
+ |
+|PageNum|Integer|10|分页的页码。
+
+ |
+|PageSize|Integer|5|每页大小。
+
+ |
+|Order|String|asc|排序。
+
+ |
+|TotalPage|Integer|20|总页数。
+
+ |
+|TotalNum|Integer|12|符合条件的总个数。
+
+ |
+|RequestId|String|DE24625C-7C0F-4020-8448-9C31A50C1556|请求ID。
+
+ |
+
+## 示例 {#demo .section}
 
 请求示例
 
-```
-https://live.aliyuncs.com/?Action=DescribeLiveStreamRecordIndexFiles&DomainName=live.aliyunlive.com&AppName=aliyuntest&StreamName=xxx&StartTime=xxx&EndTime=xxx&<公共请求参数> 
-```
+``` {#request_demo}
 
-**说明：** 关于公共请求参数详细内容，参见 [公共请求参数](cn.zh-CN/API参考/调用方式/公共参数.md#)。
+http(s)://[live.aliyuncs.com]/?Action=DescribeLiveStreamRecordIndexFiles
+&AppName=testApp
+&DomainName=www.yourdomain.com
+&EndTime=2017-12-22T08:00:00Z
+&StartTime=2017-12-21T08:00:00Z
+&StreamName=testStream
+&<公共请求参数>
+
+```
 
 正常返回示例
 
-JSON格式
+`XML` 格式
 
+``` {#xml_return_success_demo}
+<DescribeLiveStreamRecordIndexFilesResponse>
+	  <RecordIndexInfoList>
+		    <RecordIndexInfo>
+			      <AppName>xxx</AppName>
+			      <CreateTime>2016-05-27T09:40:56Z</CreateTime>
+			      <DomainName>xxx</DomainName>
+			      <Duration>588.849</Duration>
+			      <EndTime>2016-05-25T05:47:11Z</EndTime>
+			      <Height>480</Height>
+			      <OssBucket>bucket</OssBucket>
+			      <OssEndpoint>oss-cn-hangzhou.aliyuncs.com</OssEndpoint>
+			      <OssObject>atestObject.m3u8</OssObject>
+			      <RecordId>c4d7f0a4-b506-43f9-8de3-07732c3f3d82</RecordId>
+			      <RecordUrl>http://xxx.xxx/atestObject.m3u8</RecordUrl>
+			      <StartTime>2016-05-25T05:37:11Z</StartTime>
+			      <StreamName>xxx</StreamName>
+			      <Width>640</Width>
+		    </RecordIndexInfo>
+	  </RecordIndexInfoList>
+	  <RequestId>DE24625C-7C0F-4020-8448-9C31A50C1556</RequestId>
+</DescribeLiveStreamRecordIndexFilesResponse>
 ```
+
+`JSON` 格式
+
+``` {#json_return_success_demo}
 {
-    "RecordIndexInfoList":{
-        "RecordIndexInfo":[{
-            "AppName":"xxx",
-            "CreateTime":"2016-05-27T09:40:56Z",
-            "DomainName":"xxx",
-            "Duration":588.849,
-            "EndTime":"2016-05-25T05:47:11Z",
-            "Height":480,
-            "OssBucket":"bucket",
-            "OssEndpoint":"oss-cn-hangzhou.aliyuncs.com",
-            "OssObject":"atestObject.m3u8",
-            "RecordId":"c4d7f0a4-b506-43f9-8de3-07732c3f3d82",
-            "RecordUrl":"http://xxx.xxx/atestObject.m3u8",
-            "StartTime":"2016-05-25T05:37:11Z",
-            "StreamName":"xxx",
-            "Width":640
-        }]
-    },
-    "RequestId":"DE24625C-7C0F-4020-8448-9C31A50C1556"
+	"RequestId":"DE24625C-7C0F-4020-8448-9C31A50C1556",
+	"RecordIndexInfoList":{
+		"RecordIndexInfo":[
+			{
+				"OssObject":"atestObject.m3u8",
+				"RecordId":"c4d7f0a4-b506-43f9-8de3-07732c3f3d82",
+				"StreamName":"xxx",
+				"Height":480,
+				"OssBucket":"bucket",
+				"CreateTime":"2016-05-27T09:40:56Z",
+				"Duration":588.849,
+				"DomainName":"xxx",
+				"AppName":"xxx",
+				"EndTime":"2016-05-25T05:47:11Z",
+				"OssEndpoint":"oss-cn-hangzhou.aliyuncs.com",
+				"Width":640,
+				"StartTime":"2016-05-25T05:37:11Z",
+				"RecordUrl":"http://xxx.xxx/atestObject.m3u8"
+			}
+		]
+	}
 }
 ```
 
-异常返回示例
+## 错误码 { .section}
 
-JSON格式
+|HttpCode|错误码|错误信息|描述|
+|--------|---|----|--|
+|400|InvalidStartTime.Malformed|Specified StartTime is malformed.|StartTime参数错误，请您确认该StartTime参数是否正确。|
+|400|InvalidEndTime.Malformed|Specified EndTime is malformed.|结束时间错误，请您确认结束时间是否正确。|
+|400|InvalidEndTime.Mismatch|Specified end time does not math the specified start time.|结束时间与开始时间不匹配，请您确认时间的匹配度。|
 
-```
-{
-    "Code":"InternalError",
-    "HostId":"live.aliyuncs.com",
-    "Message":"The request processing has failed due to some unknown error.",
-    "RequestId":"6EBD1AC4-C34D-4AE1-963E-B688A228BE31"
-}
-```
-
-## 错误码 {#section_mbc_whc_dfb .section}
-
- [查看本产品错误码](https://error-center.aliyun.com/status/product/live) 
+访问[错误中心](https://error-center.aliyun.com/status/product/live)查看更多错误码。
 
