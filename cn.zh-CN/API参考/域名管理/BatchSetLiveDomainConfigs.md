@@ -6,13 +6,13 @@ Functions格式如下：
 
  `[{"functionArgs":[{"argName":"domain_name","argValue":"www.testdomain.com"}],"functionName":"set_req_host_header"}]` 
 
-**说明：** 某些功能，例如**filetype\_based\_ttl\_set**，可以设置多条纪录，当需要更新其中某条纪录时，可通过该条纪录的**configId**来指定。
+示例如下：
 
  `[{"functionArgs":[{"argName":"file_type","argValue":"jpg"},{"argName":"ttl","argValue":"18"},{"argName":"weight","argValue":"30"}],"functionName":"filetype_based_ttl_set","configId":506xxx}]` 
 
-功能说明
+**说明：** 某些功能，例如**filetype\_based\_ttl\_set**，可以设置多条纪录，当需要更新其中某条纪录时，可通过该条纪录的**configId**来指定。
 
-所有参数值均按照字符串类型处理。
+功能说明如下，所有参数值均按照字符串类型处理。
 
 |名称
 
