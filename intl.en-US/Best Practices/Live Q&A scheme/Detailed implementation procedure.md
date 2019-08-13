@@ -2,14 +2,14 @@
 
 This topic guides beginners through the procedure for creating a live Q&A service. You can learn how to use ApsaraVideo Live to ingest streams and deliver questions and how the application and application server interact with each other to complete live Q&A.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20758/156568116134364_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20758/156568875034364_en-US.png)
 
 ## Step 1: Prepare for live Q&A. {#section_dtx_hvb_dfb .section}
 
 1.  Activate [ApsaraVideo Live](https://www.alibabacloud.com/zh/product/apsaravideo-for-live?spm=a2796.7919406.1097650.dznavproductsj1.1aff2d23uJYsMi) of Alibaba Cloud.
 2.  Log on to the ApsaraVideo Live console and choose **Domain Management** \> **Management** to obtain the ingest URL and stream pulling URL. For more information, see [Stream ingest](../../../../intl.en-US/User Guide (New console)/Ingest and view streams/Configure edge ingestion.md#).
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20758/156568116134371_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20758/156568875034371_en-US.png)
 
 3.  Submit a ticket to apply for enabling the feature of inserting SEI signals into ingest streams. Enter your live domain names and application name in the ticket.
 
@@ -39,11 +39,11 @@ ApsaraVideo Player SDK can parse SEI signals. You can directly integrate and use
     -   How to import ApsaraVideo Player SDK
         1.  Add the .aar files shown in the following figure to the libs folder.
 
-            ![](images/34372_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20758/156568875034372_en-US.png)
 
         2.  Add a reference to the .aar files in the Gradle of the application.
 
-            ![](images/34373_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20758/156568875034373_en-US.png)
 
     -   How to use the player
 
@@ -92,15 +92,15 @@ ApsaraVideo Player SDK can parse SEI signals. You can directly integrate and use
 
             Open the project, select the target, and choose **General** \> **Embedded Binaries**. Click the plus sign \(**+**\), and then select **Add Other...**. For ApsaraVideo Player Basic, you only need to import the downloaded AliyunPlayerSDK.framework to the project and select the copy option.
 
-            ![](images/34374_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20758/156568875134374_en-US.png)
 
             Import the header file.
 
-            ![](images/34375_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20758/156568875134375_en-US.png)
 
             Choose **Build Settings** \> **Build Options** and set **Enable Bitcode** to **No**.
 
-            ![](images/34376_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20758/156568875134376_en-US.png)
 
         2.  CocoaPods-based import
 
@@ -111,7 +111,7 @@ ApsaraVideo Player SDK can parse SEI signals. You can directly integrate and use
             
             ```
 
-            ![](images/34377_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20758/156568875234377_en-US.png)
 
             Run the pod install or pod update command to integrate the SDK into the project.
 
