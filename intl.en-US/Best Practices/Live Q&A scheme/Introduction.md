@@ -23,7 +23,7 @@ Live Q&A is an activity during which users enter a live stream channel at the sc
     -   After users answer the question, the client needs to report the answers, which consumes a certain amount of communication time. In the actual Q&A system, the application server allows a grace period for users to submit answers. For example, answers received within a 1-second delay of the original answer submission period are all considered valid.
     The following figure shows the architecture of the live Q&A scheme.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20757/156568102755298_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20757/156568113455298_en-US.png)
 
 
  **Step 2: Activate ApsaraVideo Live and prepare for starting live Q&A.** 
