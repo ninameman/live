@@ -2,14 +2,14 @@
 
 This topic guides beginners through the procedure for creating a live Q&A service. You can learn how to use ApsaraVideo Live to ingest streams and deliver questions and how the application and application server interact with each other to complete live Q&A.
 
-![](images/34364_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20758/156568111134364_en-US.png)
 
 ## Step 1: Prepare for live Q&A. {#section_dtx_hvb_dfb .section}
 
 1.  Activate [ApsaraVideo Live](https://www.alibabacloud.com/zh/product/apsaravideo-for-live?spm=a2796.7919406.1097650.dznavproductsj1.1aff2d23uJYsMi) of Alibaba Cloud.
 2.  Log on to the ApsaraVideo Live console and choose **Domain Management** \> **Management** to obtain the ingest URL and stream pulling URL. For more information, see [Stream ingest](../../../../intl.en-US/User Guide (New console)/Ingest and view streams/Configure edge ingestion.md#).
 
-    ![](images/34371_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20758/156568111234371_en-US.png)
 
 3.  Submit a ticket to apply for enabling the feature of inserting SEI signals into ingest streams. Enter your live domain names and application name in the ticket.
 
