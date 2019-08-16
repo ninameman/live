@@ -6,7 +6,7 @@ This topic describes how to integrate the Android stream ingest SDK.
 
 The following figure shows the directory structure of the downloaded **SDK** package.
 
-![](images/13965_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156592804155866_en-US.png)
 
 -   The following figures show the directory structure of the **AlivcLivePusherSDK** folder, which does not include the Alibaba Cloud ApsaraVideo Player SDK.
     -   **aarlibs**
@@ -83,7 +83,7 @@ To download a stream ingest SDK package, click [Download SDKs](https://help.aliy
 
 3.  Configure the project.
 
-    ```
+    ``` {#codeblock_orr_5qu_u22}
     dependencies {
      implementation fileTree(dir: 'libs', include: ['*.jar'])
     }
@@ -91,7 +91,7 @@ To download a stream ingest SDK package, click [Download SDKs](https://help.aliy
 
     By default, SO files are stored in the jniLibs folder. To specify another folder to store SO files, you can add the following code to the build.gradle file of your application.
 
-    ```
+    ``` {#codeblock_mxa_6mz_yhk}
     sourceSets{ 
     main{ 
        jniLibs.srcDirs = ['libs'] 
