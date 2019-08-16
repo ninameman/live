@@ -9,14 +9,11 @@ This topic describes how to use the iOS stream ingest SDK during the basic strea
 3.  The application uses this URL to configure the stream ingest SDK and starts stream ingest.
 4.  The stream ingest SDK ingests live streams to CDN.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40317/156592504921024_en-US.png)
-
-
 ## Live Q&A procedure {#section_oj3_msw_pfb .section}
 
-To implement live Q&A, you need to use the stream ingest SDK, the custom OBS, or an Alibaba Cloud API to insert SEI \(questions\) into live streams. After a user's player receives and parses the SEI, it sends a callback event notification to the user's application. Then, the user can receive and answer questions to participate in the live Q&A. The following figure shows the detailed procedure.
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40317/156592792955865_en-US.png)
 
-![](images/21025_en-US.png)
+To implement live Q&A, you need to use the stream ingest SDK, the custom OBS, or an Alibaba Cloud API to insert SEI \(questions\) into live streams. After a user's player receives and parses the SEI, it sends a callback event notification to the user's application. Then, the user can receive and answer questions to participate in the live Q&A. The following figure shows the detailed procedure.
 
 For more information about how to implement live Q&A, see [Live Q&A solution](../../../../intl.en-US/Best Practices/Live Q&A scheme/Introduction.md#). You need to submit a ticket following instructions. For more information about the player, see [Basic player \(Live Q&A\)](https://help.aliyun.com/document_detail/61431.html?spm=a2c4g.11186623.2.20.310b592cC4piqk). For more information about OBS-based stream ingest, see [OBS-based live Q&A](../../../../intl.en-US/Best Practices/Live Q&A scheme/OBS-based live Q&A.md#).
 
