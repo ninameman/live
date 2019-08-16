@@ -8,11 +8,13 @@ The Alibaba Cloud stream ingest SDK is a stream ingest development tool for Apsa
 
 The stream ingest SDK provides an advanced facial recognition–based face filter for free, which offers face thinning, chin slimming, eye widening, cheek blushing, facial recognition–based skin whitening, and other features.
 
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20911/156592068013961_en-US.png)
+
 **Experience the ApsaraVideo Live demo**
 
 Scan either of the following QR codes to experience the client-cloud integrated demo of Alibaba Cloud ApsaraVideo Live.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20911/156592055413962_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20911/156592068013962_en-US.png)
 
 **Note:** The download is not well supported by WeChat and QQ. Use the QR code scanning tool of [DingTalk](https://itunes.apple.com/cn/app/%E9%92%89%E9%92%89/id930368978?spm=a2c4g.11186623.2.16.63da78d6yo1pIQ&mt=8) or other third-party software apart from WeChat and QQ to scan a QR code and download the ApsaraVideo Live demo.
 
