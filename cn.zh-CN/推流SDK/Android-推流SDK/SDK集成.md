@@ -31,9 +31,9 @@
 
 ## 推流SDK下载 {#section_c4f_cyx_pfb .section}
 
-阿里云官网Android版 [推流SDK下载](../../../../../cn.zh-CN/SDK下载/SDK下载.md#section_sxd_wpk_nfb)，推流SDK包含在解压包的AlivcLivePusher文件夹中，如下图所示：
+阿里云官网Android版 [推流SDK下载](../../../../cn.zh-CN/SDK下载/SDK下载.md#section_sxd_wpk_nfb)，推流SDK包含在解压包的AlivcLivePusher文件夹中，如下图所示：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/155106679939285_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156592611739285_zh-CN.png)
 
 上图中的文件内容作用如下：
 
@@ -62,17 +62,17 @@
 
 将AlivcLivePusherDemo工程导入到Android Studio中，如下图所示：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/155106679939289_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156592611739289_zh-CN.png)
 
 导入工程成功后，即可直接运行工程查看Demo效果。效果如下：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/155106679939290_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156592611739290_zh-CN.png)
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/155106679939291_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156592611839291_zh-CN.png)
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/155106679939292_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156592611839292_zh-CN.png)
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/155106679939293_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156592611839293_zh-CN.png)
 
 推流url中填入有效的推流rtmp地址，推流成功后，拉流观看的效果可以使用阿里云播放器SDK、ffplay、VLC等工具查看。
 
@@ -90,7 +90,7 @@
 
     将SDK包下的jnilibs中的包拷贝到工程目录libs目录下，再将SDK包下的libs中的包拷贝到工程目录下jnilibs目录下，并在build.gradle中添加上相关的依赖，类似aar集成方式，具体如下图所示：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/155106680039305_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156592611939305_zh-CN.png)
 
 3.  添加请求权限
 
