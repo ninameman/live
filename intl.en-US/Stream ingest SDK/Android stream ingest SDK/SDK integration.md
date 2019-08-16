@@ -6,33 +6,33 @@ This topic describes how to integrate the Android stream ingest SDK.
 
 The following figure shows the directory structure of the downloaded **SDK** package.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156592861755866_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156593340055875_en-US.png)
 
 -   The following figures show the directory structure of the **AlivcLivePusherSDK** folder, which does not include the Alibaba Cloud ApsaraVideo Player SDK.
     -   **aarlibs**
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156592861855867_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156593340055867_en-US.png)
 
     -   **jniLibs**
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156592861855868_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156593340155868_en-US.png)
 
     -   **libs**
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156592861855869_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156593340155869_en-US.png)
 
     -   **obj**, which is used to locate underlying problems
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156592861855870_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156593340155870_en-US.png)
 
 -   The following figures show the directory structure of the **AlivcLivePusherSDK+AliyunPlayerSDK** folder, which includes the Alibaba Cloud ApsaraVideo Player SDK.
     -   **aarlibs**
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156592861955871_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156593340155871_en-US.png)
 
     -   **jniLibs**
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156592861955873_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156593340255873_en-US.png)
 
     -   **libs**
 
