@@ -12,7 +12,7 @@ The stream ingest SDK provides an advanced facial recognition–based face filte
 
 Scan either of the following QR codes to experience the client-cloud integrated demo of Alibaba Cloud ApsaraVideo Live.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20911/156587759613962_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20911/156592055413962_en-US.png)
 
 **Note:** The download is not well supported by WeChat and QQ. Use the QR code scanning tool of [DingTalk](https://itunes.apple.com/cn/app/%E9%92%89%E9%92%89/id930368978?spm=a2c4g.11186623.2.16.63da78d6yo1pIQ&mt=8) or other third-party software apart from WeChat and QQ to scan a QR code and download the ApsaraVideo Live demo.
 
@@ -67,26 +67,26 @@ Scan either of the following QR codes to experience the client-cloud integrated 
 
 ## Scenarios {#section_psl_44k_nfb .section}
 
-**Scenario 1: Live Q&A**
+**Scenario 1: Live Q&A** 
 
 -   **Scenario description**: Users log on to a specified channel at the specified time and answer questions online following the instructions of a caster. Those who have correctly answered 12 questions are entitled to share the total prize for each live Q&A session. Since early 2018, many Internet companies in China have organized or sponsored such Q&A activities to attract attention from and interact with their existing and potential users. You can also use this feature to promote your own business. For more information, see Live Q&A scheme.
 -   **Instructions**: Enable ApsaraVideo Live and submit a ticket to apply for the SEI insertion service. Use the custom Open Broadcaster Software \(OBS\) or an Alibaba Cloud API to insert SEI into live streams. After a user's player receives and parses the SEI, it sends a callback event notification to the user's application. Then, the user can receive and answer questions to participate in the live Q&A. For more information about the player, see [Basic player \(Live Q&A\)](https://www.alibabacloud.com/help/zh/doc-detail/61431.htm?spm=a2c63.l28256.b99.199.43757ad7LSTU8H).
 
-**Scenario 2: Educational live streaming**
+ **Scenario 2: Educational live streaming** 
 
 -   **Scenario description**: Educational live streaming focuses on the interaction between students and teachers. After logging on to a live classroom, students and teachers can type or talk to interact with each other in real time based on the Alibaba Cloud stream ingest SDK and Alibaba Cloud Message Service. The stream ingest SDK enables teachers to answer questions raised by students anytime and anywhere in a timely and effective manner. Based on the cloud-based recording and encoding features, students can play back lessons at any time to review learnt knowledge points and enhance learning effects.
 
 -   **Instructions**: Enable Alibaba Cloud ApsaraVideo Live and enable the recording and encoding features. Integrate the Alibaba Cloud stream ingest SDK and Alibaba Cloud Message Service SDK to implement the live classroom or mentoring service. After integrating the Alibaba Cloud ApsaraVideo Player SDK, users can watch the live streaming or playback of video lessons on clients to enjoy the low-latency and highly interactive educational live streaming.
 
 
-**Scenario 3: Entertainment live streaming**
+ **Scenario 3: Entertainment live streaming** 
 
 -   **Scenario description**: With the convenience of mobile phones, entertainment live streaming leads a live streaming trend among users. Casters highly rely on face filters and interact with the audience through the real-time chatting, liking, and rewarding activities to improve their popularity and program playability. However, because entertainment live streaming is easily accessible on mobile phones, the content must be strictly regulated to detect pornography or terrorism. In this case, you can use the pornography detection feature to reduce review costs.
 
 -   **Instructions**: Enable Alibaba Cloud ApsaraVideo Live and enable the recording and pornography detection features. Integrate the Alibaba Cloud stream ingest SDK and enable the face filter feature to implement video stream ingest. In addition, integrate Alibaba Cloud Message Service with your interactive chat scenarios to allow the audience to send text, voice messages, emoticons, and images on the chat panel during live streaming. You can also build a gift system based on payment through an instant messaging system. After integrating the Alibaba Cloud ApsaraVideo Player SDK, users can watch the live streaming or playback on clients.
 
 
-**Scenario 4: Game live streaming**
+ **Scenario 4: Game live streaming** 
 
 -   **Scenario description**: Mobile game live streaming uses the screen recording technology to combine the game screen with the camera-shot content and starts stream ingest through the stream ingest SDK. In this case, the stream ingest SDK must support the screen recording feature. Similar to entertainment live streaming, casters in game live streaming scenarios can also interact with the audience through the real-time chatting, liking, and rewarding activities based on the Alibaba Cloud Message Service SDK. To play back game highlights, you can use the live streaming recording and playback features.
 
