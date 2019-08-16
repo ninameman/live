@@ -6,41 +6,41 @@ This topic describes how to integrate the Android stream ingest SDK.
 
 The following figure shows the directory structure of the downloaded **SDK** package.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156593340055875_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156593423255875_en-US.png)
 
 -   The following figures show the directory structure of the **AlivcLivePusherSDK** folder, which does not include the Alibaba Cloud ApsaraVideo Player SDK.
     -   **aarlibs**
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156593340055867_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156593423255876_en-US.png)
 
     -   **jniLibs**
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156593340155868_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156593423255877_en-US.png)
 
     -   **libs**
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156593340155869_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156593423355878_en-US.png)
 
     -   **obj**, which is used to locate underlying problems
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156593340155870_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156593423355880_en-US.png)
 
 -   The following figures show the directory structure of the **AlivcLivePusherSDK+AliyunPlayerSDK** folder, which includes the Alibaba Cloud ApsaraVideo Player SDK.
     -   **aarlibs**
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156593340155871_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156593423355881_en-US.png)
 
     -   **jniLibs**
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156593340255873_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156593423355883_en-US.png)
 
     -   **libs**
 
-        ![](images/13972_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156593423455885_en-US.png)
 
     -   **obj**, which is used to locate underlying problems
 
-        ![](images/13973_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156593423455886_en-US.png)
 
         **Note:** 
 
@@ -75,11 +75,11 @@ To download a stream ingest SDK package, click [Download SDKs](https://help.aliy
 
 1.  Create a project in Android Studio.
 
-    ![](images/13974_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156593423455887_en-US.png)
 
 2.  Copy JAR packages and SO files.
 
-    ![](images/13975_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/40381/156593423555888_en-US.png)
 
 3.  Configure the project.
 
