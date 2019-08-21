@@ -1,18 +1,18 @@
-# ForbidLiveStream {#doc_api_1003557 .reference}
+# ForbidLiveStream {#doc_api_live_ForbidLiveStream .reference}
 
-禁止某条流的推送，可以预设某个时刻将流恢复。
+调用ForbidLiveStream禁止某条流的推送，可以预设某个时刻将流恢复。
 
-**说明：** 禁止直播流的上限为10,000路，超出限制将禁用失败，请您注意统计当前禁用流的数量。
+禁止直播流的上限为10,000路，超出限制将禁用失败，请您注意统计当前禁用流的数量。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=live&api=ForbidLiveStream)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=live&api=ForbidLiveStream&type=RPC&version=2016-11-01)
 
 ## 请求参数 {#parameters .section}
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|ForbidLiveStream|系统规定参数。取值：**ForbidLiveStream**
+|Action|String|是|ForbidLiveStream|系统规定参数。取值：**ForbidLiveStream**。
 
  |
 |AppName|String|是|testApp|应用名称。
@@ -27,17 +27,23 @@
 |StreamName|String|是|testStream|流名称。
 
  |
+|Oneshot|String|否|no|是否只断流不加入黑名单，取值: yes，表示只断流不加黑名单
+
+ |
+|RegionId|String|否|cn-beijing|所在区域。
+
+ |
 |ResumeTime|String|否|2015-12-01T17:37:00Z|恢复流的时间。
 
- UTC 时间，格式：2015-12-01T17:37:00Z。
+ UTC时间，格式：2015-12-01T17:37:00Z。
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|RequestId|String|16BFE188-B193-4C3C-ADC5-79A7E31486EA|该条任务请求ID
+|RequestId|String|16BFE188-B193-4C3C-ADC5-79A7E31486EA|请求ID
 
  |
 
@@ -62,9 +68,8 @@ http(s)://[Endpoint]/?Action=ForbidLiveStream
 
 ``` {#xml_return_success_demo}
 <ForbidLiveStreamResponse>
-  <RequestId>16BFE188-B193-4C3C-ADC5-79A7E31486EA</RequestId>
+	  <RequestId>16BFE188-B193-4C3C-ADC5-79A7E31486EA</RequestId>
 </ForbidLiveStreamResponse>
-
 ```
 
 `JSON` 格式
@@ -82,5 +87,5 @@ http(s)://[Endpoint]/?Action=ForbidLiveStream
 |400|InvalidResumeTime.Malformed|Specified parameter ResumeTime is not valid.|ResumeTime参数错误，请您确认该ResumeTime参数是否正确。|
 |400|ConfigAlreadyExists|Config has already exist.|配置已添加。|
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/live)
+访问[错误中心](https://error-center.aliyun.com/status/product/live)查看更多错误码。
 
