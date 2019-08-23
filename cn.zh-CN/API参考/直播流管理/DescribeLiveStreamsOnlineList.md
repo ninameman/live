@@ -1,116 +1,159 @@
-# DescribeLiveStreamsOnlineList {#concept_35409_zh .concept}
+# DescribeLiveStreamsOnlineList {#doc_api_live_DescribeLiveStreamsOnlineList .reference}
 
-查看指定域名下（或者指定域名下某个应用）的所有正在推的流的信息。
+调用DescribeLiveStreamsOnlineList查看指定域名下（或者指定域名下某个应用）的所有正在推的流的信息。
 
-**说明：** 查询推流在线列表接口的访问频率限制为每分钟1,000次，请您注意不要频繁调用，以免造成业务不可用。
+## 调试 {#api_explorer .section}
 
-## 请求参数 {#section_k4f_qm1_dfb .section}
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=live&api=DescribeLiveStreamsOnlineList&type=RPC&version=2016-11-01)
 
-|参数|类型|是否必选|示例值|描述|
-|:-|:-|:---|:--|:-|
-|Action|String|是|DescribeLiveStreamsOnlineList|系统规定参数。取值：DescribeLiveStreamsOnlineList|
-|DomainName|String|是|play.yourdomain.com|您的加速域名。|
-|AppName|String|否|testApp|应用名称。**说明：** AppName 不支持通配符（\*）查询，且不支持模糊查询。
+## 请求参数 {#parameters .section}
 
-|
-|StreamName|String|否|livestream|流名称。**说明：** StreamName不支持通配符（\*）查询，但支持模糊查询 。
+|名称|类型|是否必选|示例值|描述|
+|--|--|----|---|--|
+|Action|String|是|DescribeLiveStreamsOnlineList|系统规定参数。取值：**DescribeLiveStreamsOnlineList**。
 
-|
-|StreamType|String|否|all|流类型。取值范围：
+ |
+|DomainName|String|是|play.yourdomain.com|您的加速域名。
 
--   all
--   raw
--   trans
+ |
+|AppName|String|否|testApp|应用名称。
 
-对应查询所有流、原始流、转码流，默认all返回所有流信息。|
+ **说明：** AppName不支持通配符（\*）查询，且不支持模糊查询。
+
+ |
+|PageNum|Integer|否|1|当前页码，默认值为**1**。
+
+ |
+|PageSize|Integer|否|1500|每页大小，取值：**1~3000**之前的任意整数。最大值为**3000**，默认值为**2000**。
+
+ |
 |QueryType|String|否|fuzzy|指定是否模糊匹配流名称。取值：
 
--   fuzzy：模糊匹配
--   strict：精准匹配
+ -   **fuzzy**：模糊匹配
+-   **strict**：精准匹配
 
-|
-|StartTime|String|否|2016-06-29T19:00:00Z|起始时间。-   UTC格式
--   例如：2016-06-29T19:00:00Z
+ |
+|RegionId|String|否|cn-hangzhou|地域ID。
 
-|
-|EndTime|String|否|2016-06-30T19:00:00Z|结束时间。-   UTC格式
--   例如：2016-06-30T19:00:00Z
--   EndTime和StartTime之间的间隔不能超过30天。
+ |
+|StreamName|String|否|myStream|流名称。
 
-|
-|PageNum|Integer|否|1|取得第几页，默认1。|
-|PageSize|Integer|否|1500| 每页大小，最大3000。
+ **说明：** StreamName不支持通配符（\*）查询，但支持模糊查询 。
 
- 取值：1~3000之前的任意整数。
+ |
+|StreamType|String|否|all|流类型。取值范围：
 
- 默认值：2000
+ -   **all（默认值）**：查询所有流
+-   **raw**：查询原始流
+-   **trans**：查询转码流
 
  |
 
-## 返回参数 {#section_p4f_qm1_dfb .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
-|:-|:-|:--|:-|
-|OnlineInfo| | |正在推送流的信息。|
-|  └DomainName|String|play.yourdomain.com|流所属加速域名。|
-|  └AppName|String|AppName|流所属应用名称。|
-|  └StreamName|String|StreamName|流名称。|
-|  └PublishTime|String|2015-12-02T06:58:04Z|开始推流时刻 UTC 时间。|
-|  └PublishUrl|String|rtmp://play.aliyunlive.com/AppName/StreamName|推流完整 URL 地址。|
-|  └PublishDomain|String|push.aliyunlive.com|直播推流域名，使用中心推流的可直接填写播放域名。|
-|RequestId|String|40A4F36D-A7CC-473A-88E7-154F92242566|该条任务请求ID。|
-|PageNum|Integer|1|分页的页码。|
-|PageSize|Integer|10|每页显示的条数。|
-|TotalNum|Integer|10|符合条件的总个数。|
-|TotalPage|Integer|100|总页数。|
+|--|--|---|--|
+|OnlineInfo| | |正在推送流的信息。
 
-## 示例 {#section_zcx_4j1_dfb .section}
+ |
+|DomainName|String|play.yourdomain.com|流所属加速域名。
+
+ |
+|AppName|String|AppName|流所属应用名称。
+
+ |
+|StreamName|String|StreamName|流名称。
+
+ |
+|PublishTime|String|2015-12-02T06:58:04Z|开始推流时刻，UTC格式。
+
+ |
+|PublishUrl|String|rtmp://play.aliyunlive.com/AppName/StreamName|推流完整URL地址。
+
+ |
+|PublishDomain|String|push.aliyunlive.com|直播推流域名，使用中心推流的可直接填写播放域名。
+
+ |
+|PageNum|Integer|1|分页的页码。
+
+ |
+|PageSize|Integer|10|每页显示的条数。
+
+ |
+|RequestId|String|40A4F36D-A7CC-473A-88E7-154F92242566|请求ID。
+
+ |
+|TotalNum|Integer|10|符合条件的总个数。
+
+ |
+|TotalPage|Integer|100|总页数。
+
+ |
+
+## 示例 {#demo .section}
 
 请求示例
 
-```
-https://live.aliyuncs.com/?Action=DescribeLiveStreamsOnlineList&DomainName=test101.aliyunlive.com&PageSize=10&PageNum=2&<公共请求参数> 
-```
+``` {#request_demo}
 
-**说明：** 关于公共请求参数详细内容，参见 [公共请求参数](cn.zh-CN/API参考/调用方式/公共参数.md#)。
+http(s)://live.aliyuncs.com?Action=DescribeLiveStreamsOnlineList
+&DomainName=play.yourdomain.com
+&<公共请求参数>
+
+```
 
 正常返回示例
 
-JSON格式
+`XML` 格式
 
+``` {#xml_return_success_demo}
+<DescribeLiveStreamsOnlineListResponse>
+	  <OnlineInfo>
+		    <LiveStreamOnlineInfo>
+			      <AppName>xchen</AppName>
+			      <DomainName>test101.cdnpe.com</DomainName>
+			      <PublishTime>2015-12-02T06:58:04Z</PublishTime>
+			      <PublishUrl>rtmp://test101.cdnpe.com/xchen</PublishUrl>
+			      <StreamName>testxchen</StreamName>
+		    </LiveStreamOnlineInfo>
+	  </OnlineInfo>
+	  <PageNum>2</PageNum>
+	  <PageSize>10</PageSize>
+	  <RequestId>0D70427D-91E4-4349-AAD3-5511A5BB823B</RequestId>
+	  <TotalNum>11</TotalNum>
+	  <TotalPage>2</TotalPage>
+</DescribeLiveStreamsOnlineListResponse>
 ```
+
+`JSON` 格式
+
+``` {#json_return_success_demo}
 {
-    "OnlineInfo":{
-        "LiveStreamOnlineInfo":[{
-            "AppName":"xchen",
-            "DomainName":"test101.cdnpe.com",
-            "PublishTime":"2015-12-02T06:58:04Z",
-            "PublishUrl":"rtmp://test101.cdnpe.com/xchen",
-            "StreamName":"testxchen"
-        }]
-    },
-    "PageNum":2,
-    "PageSize":10,
-    "RequestId":"0D70427D-91E4-4349-AAD3-5511A5BB823B",
-    "TotalNum":11,
-    "TotalPage":2
+	"TotalPage":2,
+	"TotalNum":11,
+	"PageSize":10,
+	"RequestId":"0D70427D-91E4-4349-AAD3-5511A5BB823B",
+	"PageNum":2,
+	"OnlineInfo":{
+		"LiveStreamOnlineInfo":[
+			{
+				"PublishTime":"2015-12-02T06:58:04Z",
+				"StreamName":"testxchen",
+				"PublishUrl":"rtmp://test101.cdnpe.com/xchen",
+				"DomainName":"test101.cdnpe.com",
+				"AppName":"xchen"
+			}
+		]
+	}
 }
 ```
 
-异常返回示例
+## 错误码 { .section}
 
-JSON格式
+|HttpCode|错误码|错误信息|描述|
+|--------|---|----|--|
+|400|InvalidStartTime.Malformed|Specified StartTime is malformed.|StartTime参数错误，请您确认该StartTime参数是否正确。|
+|400|InvalidEndTime.Malformed|Specified EndTime is malformed.|结束时间错误，请您确认结束时间是否正确。|
 
-```
-{
-    "Code":"InternalError",
-    "HostId":"live.aliyuncs.com",
-    "Message":"The request processing has failed due to some unknown error.",
-    "RequestId":"6EBD1AC4-C34D-4AE1-963E-B688A228BE31"
-}
-```
-
-## 错误码 {#section_v4f_qm1_dfb .section}
-
-[查看本产品错误码](https://error-center.aliyun.com/status/product/live)
+访问[错误中心](https://error-center.aliyun.com/status/product/live)查看更多错误码。
 
