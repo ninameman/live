@@ -1,96 +1,151 @@
-# DescribeLiveRecordVodConfigs {#concept_63970_zh .concept}
+# DescribeLiveRecordVodConfigs {#doc_api_live_DescribeLiveRecordVodConfigs .reference}
 
-查询直转点配置列表。
+调用DescribeLiveRecordVodConfigs查询直转点配置列表。
 
-## 请求参数 {#section_k4f_qm1_dfb .section}
+## 调试 {#api_explorer .section}
 
-|参数|类型|是否必选|示例值|描述|
-|:-|:-|:---|:--|:-|
-|Action|String|是|DescribeLiveRecordVodConfigs|系统规定参数。取值：DescribeLiveRecordVodConfigs|
-|DomainName|String|是|play.aliyunlive.com|您的加速域名。|
-|AccessKeyId|String|否|LTAIJUJDeDini0dd|阿里云颁发给用户的访问服务所用的密钥ID。|
-|AppName|String|否|app|直播流所属应用名称。|
-|PageNum|Long|否|1| 分页的页码。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=live&api=DescribeLiveRecordVodConfigs&type=RPC&version=2016-11-01)
 
- 默认值：1
+## 请求参数 {#parameters .section}
+
+|名称|类型|是否必选|示例值|描述|
+|--|--|----|---|--|
+|Action|String|是|DescribeLiveRecordVodConfigs|系统规定参数。取值：**DescribeLiveRecordVodConfigs**。
 
  |
-|PageSize|Long|否|10| 每页大小。
-
--   取值范围：\[5，100\]
--   默认值：10
+|DomainName|String|是|play.aliyunlive.com|您的加速域名。
 
  |
-|StreamName|String|否|stream|直播流名称。|
+|AppName|String|否|app|直播流所属应用名称。
 
-## 返回参数 {#section_p4f_qm1_dfb .section}
+ |
+|PageNum|Long|否|1|分页的页码。默认值：**1**。
+
+ |
+|PageSize|Long|否|10|每页大小。默认值为**10**。
+
+ -   取值范围：5~100
+
+ |
+|RegionId|String|否|cn-shanghai|区域。
+
+ |
+|StreamName|String|否|stream|直播流名称。
+
+ |
+
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
-|:-|:-|:--|:-|
-|RequestId|String|rtmp://play.aliyunlive.com/AppName/StreamName|该条任务请求ID|
-|PageNum|Integer|1|分页页码。|
-|PageSize|Integer|1|页大小。|
-|Total|String|3|总页数。|
-|LiveRecordVodConfigs| | |配置信息列表。|
-|  └CreateTime|String|2015-12-01T17:37:00Z| 创建时间。
-
- -   UTC 时间。
--   格式：2015-12-01T17:37:00Z。
+|--|--|---|--|
+|LiveRecordVodConfigs| | |配置信息列表。
 
  |
-|  └DomainName|String|play.aliyunlive.com|流所属加速域名。|
-|  └AppName|String|app|流所属应用名称。|
-|  └StreamName|String|stream|直播流名称。|
-|  └VodTranscodeGroupId|String|e2d796d3bb5fd8049d32bff62f940711|点播转码组模板ID。|
-|  └CycleDuration|Integer|360| 周期录制时长。
+|AppName|String|app|流所属应用名称。
 
--   单位：秒。
--   取值范围：\[300，21600\]
--   默认值：3600秒
+ |
+|AutoCompose|String|ON|是否开启自动合并。
+
+ -   **ON**：开启
+-   **OFF**：关闭
+
+ |
+|ComposeVodTranscodeGroupId|String|dadfcaaddexxxx|自动合并点播转码模板组ID。
+
+ **说明：** 如果开启了自动合成，则该字段必填。
+
+ |
+|CreateTime|String|2015-12-01T17:37:00Z|创建时间。
+
+ UTC格式：2015-12-01T17:37:00Z。
+
+ |
+|CycleDuration|Integer|360|周期录制时长，单位：秒。默认值为**3600**，取值范围：**300~21600**。
+
+ |
+|DomainName|String|play.aliyunlive.com|流所属加速域名。
+
+ |
+|StreamName|String|stream|直播流名称。
+
+ |
+|VodTranscodeGroupId|String|e2d796d3bb5fd8049d32bff62f940711|点播转码组模板ID。
+
+ |
+|PageNum|Integer|1|分页页码。
+
+ |
+|PageSize|Integer|1|分页大小。
+
+ |
+|RequestId|String|创建房间时输入的主播ID，最大长度32位，合法字符：\[a-z, A-Z, 0-9, -\]|请求ID。
+
+ |
+|Total|String|100|总页数。
 
  |
 
-## 示例 {#section_zcx_4j1_dfb .section}
+## 示例 {#demo .section}
 
 请求示例
 
-```
- https://live.aliyuncs.com?Action=DescribeLiveRecordVodConfigs&DomainName=live.aliyunlive.com<公共请求参数>
+``` {#request_demo}
+
+http(s)://[Endpoint]/?Action=DescribeLiveRecordVodConfigs
+&DomainName=play.aliyunlive.com
+&<公共请求参数>
+
 ```
 
 正常返回示例
 
-JSON格式
+`XML` 格式
 
+``` {#xml_return_success_demo}
+<DescribeLiveRecordVodConfigsResponse>
+  <LiveRecordVodConfigs>
+		    <LiveRecordVodConfig>
+			      <AppName>aliyuntest</AppName>
+			      <CycleDuration>300</CycleDuration>
+			      <DomainName>xxxxx</DomainName>
+			      <VodTranscodeGroupId>xxxx</VodTranscodeGroupId>
+			      <AutoCompose>OFF</AutoCompose>
+			      <ComposeVodTranscodeGroupId>xxx</ComposeVodTranscodeGroupId>
+			      <CreateTime>2018-10-11T12:12:11Z</CreateTime>
+		    </LiveRecordVodConfig>
+	  </LiveRecordVodConfigs>
+	  <PageNum>1</PageNum>
+	  <PageSize>1</PageSize>
+	  <RequestId>5056369B-D337-499E-B8B7-B761BD37B08A</RequestId>
+	  <Total>100</Total>
+</DescribeLiveRecordVodConfigsResponse>
 ```
+
+`JSON` 格式
+
+``` {#json_return_success_demo}
 {
-    "LiveRecordVodConfigs":[{
-        "AppName":"aliyuntest",
-        "CycleDuration":300,
-        "DomainName":"xxxxx",
-        "VodTranscodeGroupId":"xxxx"
-    }],
-    "PageNum":5,
-    "PageSize":10,
-    "RequestId":"5056369B-D337-499E-B8B7-B761BD37B08A",
-    "Total":100
+	"PageSize":1,
+	"RequestId":"5056369B-D337-499E-B8B7-B761BD37B08A",
+	"LiveRecordVodConfigs":{
+		"LiveRecordVodConfig":[
+			{
+				"ComposeVodTranscodeGroupId":"xxx",
+				"AutoCompose":"OFF",
+				"CreateTime":"2018-10-11T12:12:11Z",
+				"CycleDuration":300,
+				"DomainName":"xxxxx",
+				"AppName":"aliyuntest",
+				"VodTranscodeGroupId":"xxxx"
+			}
+		]
+	},
+	"PageNum":1,
+	"Total":100
 }
 ```
 
-异常返回示例
+## 错误码 { .section}
 
-JSON格式
-
-```
-{
-    "Code":"InternalError",
-    "HostId":"live.aliyuncs.com",
-    "Message":"The request processing has failed due to some unknown error.",
-    "RequestId":"6EBD1AC4-C34D-4AE1-963E-B688A228BE31"
-}
-```
-
-## 错误码 {#section_v4f_qm1_dfb .section}
-
-[查看本产品错误码](https://error-center.aliyun.com/status/product/live)
+访问[错误中心](https://error-center.aliyun.com/status/product/live)查看更多错误码。
 
