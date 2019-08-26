@@ -1,60 +1,84 @@
-# DescribeLiveStreamTranscodeInfo {#doc_api_990470 .reference}
+# DescribeLiveStreamTranscodeInfo {#doc_api_live_DescribeLiveStreamTranscodeInfo .reference}
 
-查询转码配置信息。
+调用DescribeLiveStreamTranscodeInfo查询转码配置信息。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=live&api=DescribeLiveStreamTranscodeInfo)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=live&api=DescribeLiveStreamTranscodeInfo&type=RPC&version=2016-11-01)
 
 ## 请求参数 {#parameters .section}
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|DescribeLiveStreamTranscodeInfo|系统规定参数。取值：**DescribeLiveStreamTranscodeInfo**
+|Action|String|是|DescribeLiveStreamTranscodeInfo|系统规定参数。取值：**DescribeLiveStreamTranscodeInfo**。
 
  |
 |DomainTranscodeName|String|是|play.aliyunlive.com|您的加速域名。
 
  |
+|RegionId|String|否|cn-shanghai|地域。
 
-## 返回参数 {#resultMapping .section}
+ |
+
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
 |DomainTranscodeList| | |转码配置信息。
 
  |
-|└TranscodeName|String|play.aliyunlive.com|播放域名。
+|TranscodeName|String|play.aliyunlive.com|播放域名。
 
  |
-|└TranscodeApp|String|app|应用名称。
+|TranscodeApp|String|app|应用名称。
 
  |
-|└TranscodeTemplate|String|lld|转码模版，目前有：
+|TranscodeTemplate|String|lld|转码模版，目前有：
 
- -   标准质量模板：lld、lsd、lhd、lud，
+ -   标准质量模板：lld、lsd、lhd、lud
 -   高品质（窄带高清™转码）模板：ld、sd、hd、ud
 
  |
-|└CustomTranscodeParameters| | |用户自定义转码配置。
+|CustomTranscodeParameters| | |用户自定义转码配置。
 
  |
-|└FPS|Integer|15|转码视频帧率, 单位：fps。
+|AudioBitrate|Integer|64|音频码率
 
  |
-|└Height|Integer|1200|转码视频高度。
+|AudioChannelNum|Integer|2|音频声道数
 
  |
-|└TemplateType|String|h264|自定义转码模版类型。
+|AudioCodec|String|aac|音频编码
 
  |
-|└VideoBitrate|Integer|3000|转码视频比特率, 单位: kbps。
+|AudioProfile|String|low|音频profile
 
  |
-|└Width|Integer|1000|转码视频宽度。
+|AudioRate|Integer|44100|音频采样率
 
  |
-|RequestId|String|62136AE6-7793-45ED-B14A-60D19A9486D3|该条任务请求 ID。
+|FPS|Integer|15|转码视频帧率，单位：fps
+
+ |
+|Gop|String|10|GOP大小（Group of Picture）
+
+ |
+|Height|Integer|1200|转码视频高度
+
+ |
+|TemplateType|String|h264|自定义转码模版类型
+
+ |
+|VideoBitrate|Integer|3000|转码视频比特率，单位：kbps
+
+ |
+|VideoProfile|String|high|视频profile
+
+ |
+|Width|Integer|1000|转码视频宽度
+
+ |
+|RequestId|String|62136AE6-7793-45ED-B14A-60D19A9486D3|请求ID。
 
  |
 
@@ -76,28 +100,27 @@ http(s)://live.aliyuncs.com/?Action=DescribeLiveStreamTranscodeInfo
 
 ``` {#xml_return_success_demo}
 <DescribeLiveStreamTranscodeInfoResponse>
-  <DomainTranscodeList>
-    <DomainTranscodeInfo>
-      <TranscodeApp>xxxx</TranscodeApp>
-      <TranscodeName>xxxx</TranscodeName>
-      <TranscodeTemplate>xxxx</TranscodeTemplate>
-    </DomainTranscodeInfo>
-    <DomainTranscodeInfo>
-      <CustomTranscodeParameters>
-        <FPS>25</FPS>
-        <Height>720</Height>
-        <Type>h264</Type>
-        <VideoBitrate>2000</VideoBitrate>
-        <Width>1280</Width>
-      </CustomTranscodeParameters>
-      <TranscodeApp>yyyy</TranscodeApp>
-      <TranscodeName>yyyy</TranscodeName>
-      <TranscodeTemplate>yyyy</TranscodeTemplate>
-    </DomainTranscodeInfo>
-  </DomainTranscodeList>
-  <RequestId>62136AE6-7793-45ED-B14A-60D19A9486D3</RequestId>
+	  <DomainTranscodeList>
+		    <DomainTranscodeInfo>
+			      <TranscodeApp>xxxx</TranscodeApp>
+			      <TranscodeName>xxxx</TranscodeName>
+			      <TranscodeTemplate>xxxx</TranscodeTemplate>
+		    </DomainTranscodeInfo>
+		    <DomainTranscodeInfo>
+			      <CustomTranscodeParameters>
+				        <FPS>25</FPS>
+				        <Height>720</Height>
+				        <Type>h264</Type>
+				        <VideoBitrate>2000</VideoBitrate>
+				        <Width>1280</Width>
+			      </CustomTranscodeParameters>
+			      <TranscodeApp>yyyy</TranscodeApp>
+			      <TranscodeName>yyyy</TranscodeName>
+			      <TranscodeTemplate>yyyy</TranscodeTemplate>
+		    </DomainTranscodeInfo>
+	  </DomainTranscodeList>
+	  <RequestId>62136AE6-7793-45ED-B14A-60D19A9486D3</RequestId>
 </DescribeLiveStreamTranscodeInfoResponse>
-
 ```
 
 `JSON` 格式
@@ -131,5 +154,5 @@ http(s)://live.aliyuncs.com/?Action=DescribeLiveStreamTranscodeInfo
 
 ## 错误码 { .section}
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/live)
+访问[错误中心](https://error-center.aliyun.com/status/product/live)查看更多错误码。
 
