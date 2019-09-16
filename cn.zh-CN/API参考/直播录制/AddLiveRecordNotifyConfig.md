@@ -25,13 +25,11 @@
 |NotifyUrl|String|是|http://www.yourdomain.cn/examplecallback.action|录制回调（包括录制事件和状态回调） url 地址。
 
  -   必须以`http://`或者`https://`开头。
--   需要做url encode。
 
  |
 |OnDemandUrl|String|否|http://www.yourdomain.cn/ondemandcallback.action|按需录制回调 url 地址。
 
  -   必须以`http://`或者`https://`开头。
--   需要做url encode。
 
  |
 |NeedStatusNotify|Boolean|否|false|是否需要录制任务状态回调，可取值：**true | false**。
