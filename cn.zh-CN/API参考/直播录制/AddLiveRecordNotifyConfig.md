@@ -30,6 +30,7 @@
 |OnDemandUrl|String|否|http://www.yourdomain.cn/ondemandcallback.action|按需录制回调 url 地址。
 
  -   必须以`http://`或者`https://`开头。
+-   更多详情参考[按需录制回调文档](~~85910~~)。
 
  |
 |NeedStatusNotify|Boolean|否|false|是否需要录制任务状态回调，可取值：**true | false**。
