@@ -104,6 +104,11 @@ http(s)://[live.aliyuncs.com]/?Action=AddLiveAppRecordConfig
 &DomainName=test.com
 &OssBucket=testBucket
 &OssEndpoint=oss-cn-shanghai.aliyuncs.com
+&RecordFormat.1.Format=m3u8
+&RecordFormat.1.OssObjectPrefix=record%2F%7BAppName%7D%2F%7BStreamName%7D%2F%7BSequence%7D%7BEscapedStartTime%7D%7BEscapedEndTime%7D
+&RecordFormat.1.SliceOssObjectPrefix=record%2F%7BAppName%7D%2F%7BStreamName%7D%2F%7BUnixTimestamp%7D_%7BSequence%7D
+&RecordFormat.2.Format=mp4
+&RecordFormat.2.OssObjectPrefix=record%2F%7BAppName%7D%2F%7BStreamName%7D%2F%7BSequence%7D%7BEscapedStartTime%7D%7BEscapedEndTime%7D
 &<公共请求参数>
 
 ```
