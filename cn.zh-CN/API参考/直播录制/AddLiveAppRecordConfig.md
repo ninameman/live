@@ -27,61 +27,61 @@
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|AddLiveAppRecordConfig| 系统规定参数，取值：**AddLiveAppRecordConfig**。
+|Action|String|是|AddLiveAppRecordConfig|系统规定参数，取值：**AddLiveAppRecordConfig**。
 
  |
-|AppName|String|是|testApp| 直播流所属应用名称。
+|AppName|String|是|testApp|直播流所属应用名称。
 
  支持通配符\(\*\)，代表该域名下所有的AppName。
 
  |
-|DomainName|String|是|test.com| 加速域名，指播放域名。
+|DomainName|String|是|test.com|加速域名，指播放域名。
 
  |
-|OssBucket|String|是|testBucket| OssBucket名称。
+|OssBucket|String|是|testBucket|OssBucket名称。
 
  |
-|OssEndpoint|String|是|oss-cn-shanghai.aliyuncs.com| OssEndpoint域名。
+|OssEndpoint|String|是|oss-cn-shanghai.aliyuncs.com|OssEndpoint域名。
 
  |
-|EndTime|String|否|2018-04-16T09:57:21Z| 录制结束时间。格式：UTC时间。
+|EndTime|String|否|2018-04-16T09:57:21Z|录制结束时间。格式：UTC时间。
 
  设置时间必须从当前时间开始15天之内的时间，只在流级别录制\(StreamName不为空\)有效，且时间应晚于录制开始时间。
 
  |
-|OnDemand|Integer|否|1| 按需录制。
+|OnDemand|Integer|否|1|按需录制。
 
  -   0表示关闭。
 -   1表示通过HTTP回调方式。
 -   7表示默认不录制，通过RealTimeRecordCommand接口手动控制录制启停。
 
- **说明：** 使用1方式时候需要设置OnDemandCallback，否则默认不录制。
+ **说明：** 使用1方式时候需要先通过[AddLiveRecordNotifyConfig接口](~~51831~~)设置OnDemandUrl，否则默认不录制。
 
  |
-|RecordFormat.N.CycleDuration|Integer|是|1| 周期录制时长。单位：秒。不填则默认为**6**小时。
+|RecordFormat.N.CycleDuration|Integer|否|1|周期录制时长。单位：秒。不填则默认为**6**小时。
 
  |
-|RecordFormat.N.Format|String|是|m3u8| 格式。目前支持m3u8、flv或mp4。
+|RecordFormat.N.Format|String|否|m3u8|格式。目前支持m3u8、flv或mp4。
 
  |
-|RecordFormat.N.OssObjectPrefix|String|是|record/\{AppName\}/\{StreamName\}/\{Sequence\}\{EscapedStartTime\}\{EscapedEndTime\}| OSS存储的录制文件名，小于256 byte，支持变量匹配，包含 \{AppName\}、\{StreamName\}、\{Sequence\}、\{StartTime\}、\{EndTime\}、\{EscapedStartTime\}、\{EscapedEndTime\}。参数值必须要有\{StartTime\}或\{EscapedStartTime\}和\{EndTime\}或\{EscapedEndTime\}变量。默认支持1小时周期录制，最小周期时间15分钟，最多6小时。
+|RecordFormat.N.OssObjectPrefix|String|否|record/\{AppName\}/\{StreamName\}/\{Sequence\}\{EscapedStartTime\}\{EscapedEndTime\}|OSS存储的录制文件名，小于256 byte，支持变量匹配，包含 \{AppName\}、\{StreamName\}、\{Sequence\}、\{StartTime\}、\{EndTime\}、\{EscapedStartTime\}、\{EscapedEndTime\}。参数值必须要有\{StartTime\}或\{EscapedStartTime\}和\{EndTime\}或\{EscapedEndTime\}变量。默认支持1小时周期录制，最小周期时间15分钟，最多6小时。
 
  例如：record/\{AppName\}/\{StreamName\}/\{Sequence\}\_\{EscapedStartTime\}\_\{EscapedEndTime\}。
 
  **说明：** \{StartTime\}/\{EndTime\}格式为：2006-01-02-15：04：05，\{EscapedStartTime\}/\{EscapedEndTime\}格式为：2006-01-02-15-04-05，推荐使用 Escaped 格式，避免特殊字符在URL中带来的一些问题。
 
  |
-|RecordFormat.N.SliceOssObjectPrefix|String|是|record/\{AppName\}/\{StreamName\}/\{UnixTimestamp\}\_\{Sequence\}| 当format格式是m3u8录制，则需要配置，表示ts切片名称。默认30秒一片，小于256byte，支持变量匹配，包含\{AppName\}、\{StreamName\}、\{UnixTimestamp\}、\{Sequence\}。
+|RecordFormat.N.SliceOssObjectPrefix|String|否|record/\{AppName\}/\{StreamName\}/\{UnixTimestamp\}\_\{Sequence\}|当format格式是m3u8录制，则需要配置，表示ts切片名称。默认30秒一片，小于256byte，支持变量匹配，包含\{AppName\}、\{StreamName\}、\{UnixTimestamp\}、\{Sequence\}。
 
  例如：record/\{AppName\}/\{StreamName\}/\{UnixTimestamp\}\_\{Sequence\}，参数值必须包含\{UnixTimestamp\}和\{Sequence\}变量。
 
  |
-|StartTime|String|否|2018-04-10T09:57:21Z| 录制开始时间。格式：UTC时间。
+|StartTime|String|否|2018-04-10T09:57:21Z|录制开始时间。格式：UTC时间。
 
  设置时间必须从当前时间开始15天之内的时间，只在流级别录制\(StreamName不为空\)有效。
 
  |
-|StreamName|String|否|teststream| 流名称。
+|StreamName|String|否|teststream|流名称。
 
  |
 
@@ -89,7 +89,7 @@
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|RequestId|String|16A96B9A-F203-4EC5-8E43-CB92E68F4CD8| 请求ID
+|RequestId|String|16A96B9A-F203-4EC5-8E43-CB92E68F4CD8|请求ID
 
  |
 
@@ -141,5 +141,5 @@ http(s)://[live.aliyuncs.com]/?Action=AddLiveAppRecordConfig
 |400|InvalidStartTime.Malformed|Specified StartTime is malformed.|StartTime参数错误，请您确认该StartTime参数是否正确。|
 |400|InvalidEndTime.Malformed|Specified EndTime is malformed.|结束时间错误，请您确认结束时间是否正确。|
 
-访问[错误中心](https://error-center.alibabacloud.com/status/product/live)查看更多错误码。
+访问[错误中心](https://error-center.aliyun.com/status/product/live)查看更多错误码。
 
