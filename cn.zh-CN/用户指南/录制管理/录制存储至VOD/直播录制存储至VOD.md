@@ -50,13 +50,13 @@
 
 2.  在视频点播控制台页面，单击 **媒体处理配置** \> **转码设置** \> **添加转码模板组**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20706/156888198761404_zh-CN.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20706/156888473861404_zh-CN.jpg)
 
-    在 **添加转码模板组**页面，对 **模板名称**、**封装格式**、**清晰度**、**码率**、**分辨率** 等参数进行配置，并单击 **保存**。
+3.  在 **添加转码模板组**页面，对 **模板名称**、**封装格式**、**清晰度**、**码率**、**分辨率** 等参数进行配置，并单击 **保存**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20706/156888198761415_zh-CN.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20706/156888473861415_zh-CN.jpg)
 
-3.  创建好直播转点播 **录制转码模板**，您可在录制列表中查看。
+4.  创建好直播转点播 **录制转码模板**，您可在录制列表中查看。
 
     ![](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/pic/84936/cn_zh/1535116356577/%E5%BD%95%E5%88%B6vod.png)
 
