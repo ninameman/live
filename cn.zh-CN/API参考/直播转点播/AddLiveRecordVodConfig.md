@@ -32,7 +32,7 @@
  |
 |ComposeVodTranscodeGroupId|String|否|XXXXXX|自动合并点播转码模板组ID。
 
- **说明：** 如果开启了自动合成，则该字段必填。
+ **说明：** 如果开启了自动合并，则该字段必填。
 
  |
 |CycleDuration|Integer|否|300|周期录制时长，单位为秒。默认值为**3600**，可取值为**300~21600**。
