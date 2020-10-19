@@ -45,8 +45,8 @@ SDK下载
 
 |    客户端    |                                     说明文档                                      |                                                                           下载地址                                                                            |
 |-----------|-------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| iOS下载     | [集成ARTC](https://help.aliyun.com/document_detail/134720.html) | [5.1.5](https://alivc-demo-cms.alicdn.com/versionProduct/sourceCode/playVideo/5.1.5/ApsaraVideo_videoPlay_v5.1.5_iOS_20200721.zip)        |
-| Android下载 | [集成ARTC](https://help.aliyun.com/document_detail/134721.html) | [5.1.5](https://alivc-demo-cms.alicdn.com/versionProduct/sourceCode/playVideo/5.1.5/ApsaraVideo_videoPlay_v5.1.5_Android_20200722.zip)    |
+| iOS下载     | [集成ARTC](https://help.aliyun.com/document_detail/134720.html) | [5.2.1](https://alivc-demo-cms.alicdn.com/versionProduct/sourceCode/playVideo/5.2.1/ApsaraVideo_videoPlay_v5.2.1_iOS_20200930.zip)        |
+| Android下载 | [集成ARTC](https://help.aliyun.com/document_detail/134721.html) | [5.2.1](https://alivc-demo-cms.alicdn.com/versionProduct/sourceCode/playVideo/5.2.1/ApsaraVideo_videoPlay_v5.2.1_Android_20200930.zip)    |
 | Web下载     | [集成ARTC](https://help.aliyun.com/document_detail/177370.html) | [1.2.2，](https://g.alicdn.com/AliRTC/H5RTSSdk/1.2.2/aliyun-rts-sdk.js)[npm](https://www.npmjs.com/package/aliyun-rts-sdk) |
 
 
