@@ -1,24 +1,36 @@
-# Java SDK使用说明 {#concept_sxg_xwd_qfb .concept}
+# Java SDK使用说明
 
 本文介绍Java SDK使用说明。请您按照以下步骤进行操作。
 
-## 操作步骤 { .section}
+## 操作步骤
 
-1.  引入SDK
+1.  引入阿里云核心SDK
 
-    请在pom.xml文件中增加以下依赖，准确的SDK版本号，参见 [阿里云开发工具包（SDK）](https://www.alibabacloud.com/zh/support/developer-resources?spm=a2c63.m28257.1097650.dzhnavresourcesb1.c3c6ed693kjoke)。
+    请在pom.xml文件中增加视频直播依赖，准确的SDK版本号，参见[阿里云开发工具包（SDK）](https://develop.aliyun.com/tools?spm=5176.136436.765261.185.1N8eiu#sdk)。
 
     ```
     <dependencies>
-     <dependency>
-        <groupId>com.aliyun</groupId>
-        <artifactId>aliyun-java-sdk-live</artifactId>
-        <version>2.3.0</version>
-     </dependency>
+        <dependency>    
+            <groupId>com.aliyun</groupId>    
+            <artifactId>aliyun-java-sdk-core</artifactId>    
+            <version>4.4.6</version>
+        </dependency>
     </dependencies>
     ```
 
-2.  初始化Client
+2.  引入阿里云视频直播SDK
+
+    ```
+    <dependencies>
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-live</artifactId>
+            <version>3.9.0</version>
+        </dependency>
+    </dependencies>
+    ```
+
+3.  初始化Client
 
     SDK通过IAcsClient的instance来完成openAPI的调用。因此，在您发起调用前，请先初始化IAcsClient实例。示例代码如下：
 
@@ -32,7 +44,7 @@
      }
     ```
 
-3.  初始化请求
+4.  初始化请求
 
     发起API调用前，先初始化对应的请求的request实例，DescribeLiveSnapshotConfig（查询截图配置）接口为例，示例代码如下：
 
@@ -58,7 +70,7 @@
     }
     ```
 
-4.  发起openAPI调用并解析结果
+5.  发起openAPI调用并解析结果
 
     利用上一步初始化好的IAcsClient，您可以发起openAPI调用。IAcsClient提供了两种类型的调用结果返回，一种方式是通过调用doAction方法获取取得原始的API调用结果，即返回HttpResponse类型的结果。示例代码如下：
 
@@ -97,12 +109,9 @@
     ```
 
 
-## 异常类型 {#section_wwf_wxd_qfb .section}
+## 异常类型
 
 -   当http status≥200且<300，表示API调用成功。
-
 -   当http status≥300且<500，SDK抛ClientException，表示客户端错误。
-
 -   当http status≥500，SDK抛ServerException，表示服务器端错误。
-
 
