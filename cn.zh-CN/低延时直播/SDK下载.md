@@ -10,10 +10,11 @@ SDK下载
 
 
 
-|   平台    |  版本号  |                                                                 完整版下载地址                                                                 |                                                                       裁剪版下载地址                                                                       |
-|---------|-------|-----------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| iOS     | 1.3.0 | [点击下载](https://alivc-demo-cms.alicdn.com/versionProduct/sourceCode/rts/1.3.0/iOS_rts_sdk_version1.3.0_data9.29.zip)     | [点击下载](https://alivc-demo-cms.alicdn.com/versionProduct/sourceCode/rts/1.3.0/iOS_rts_sdk_version1.3.0_extsslcurl_data10.14.zip)     |
-| Android | 1.3.0 | [点击下载](https://alivc-demo-cms.alicdn.com/versionProduct/sourceCode/rts/1.3.0/Android_rts_sdk_version1.3.0_data9.29.zip) | [点击下载](https://alivc-demo-cms.alicdn.com/versionProduct/sourceCode/rts/1.3.0/Android_rts_sdk_version1.3.0_extsslcurl_data10.14.zip) |
+
+|  版本   |                                       发布说明                                        |                                                                                                                                                                                                                                                                                                                        下载地址                                                                                                                                                                                                                                                                                                                         |                                                                                                                                                              阿里云播放器的版本要求                                                                                                                                                              |
+|-------|-----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1.4.0 | 1、特定场景的卡顿优化 2、支持纯音频/纯视频 拉流 3、支持外部调整缓存Buffer       | [iOS完整版本](https://alivc-demo-cms.alicdn.com/versionProduct/sourceCode/rts/1.3.0/iOS_rts_sdk_version1.3.0_data9.29.zip) [Android完整版本](https://alivc-demo-cms.alicdn.com/versionProduct/sourceCode/rts/1.3.0/Android_rts_sdk_version1.3.0_data9.29.zip) [iOS裁剪版本](https://alivc-demo-cms.alicdn.com/versionProduct/sourceCode/rts/1.3.0/iOS_rts_sdk_version1.3.0_extsslcurl_data10.14.zip) [Android裁剪版本](https://alivc-demo-cms.alicdn.com/versionProduct/sourceCode/rts/1.3.0/Android_rts_sdk_version1.3.0_extsslcurl_data10.14.zip) | 5.2.1 及以上版本 (其中Android 的[AlivcArtc](https://alivc-demo-cms.alicdn.com/versionProduct/sourceCode/rts/1.4.0/AlivcArtc-5.2.1p.aar)和iOS 的[artcSource](https://alivc-demo-cms.alicdn.com/versionProduct/sourceCode/rts/1.4.0/artcSource-5.2.1p.framework.zip)需要使用5.2.1p版本。同样支持maven和pod依赖） |
+| 1.3.0 | 1、独立发版 2、实时状态回调 3、错误码整理 4、修复稳定性问题 | [iOS完整版本](https://alivc-demo-cms.alicdn.com/versionProduct/sourceCode/rts/1.3.0/iOS_rts_sdk_version1.3.0_data9.29.zip) [Android完整版本](https://alivc-demo-cms.alicdn.com/versionProduct/sourceCode/rts/1.3.0/Android_rts_sdk_version1.3.0_data9.29.zip) [iOS裁剪版本](https://alivc-demo-cms.alicdn.com/versionProduct/sourceCode/rts/1.3.0/iOS_rts_sdk_version1.3.0_extsslcurl_data10.14.zip) [Android裁剪版本](https://alivc-demo-cms.alicdn.com/versionProduct/sourceCode/rts/1.3.0/Android_rts_sdk_version1.3.0_extsslcurl_data10.14.zip) | 5.2.1 及以上版本                                                                                                                                                                                                                                                                                                                           |
 
 
 
@@ -23,33 +24,7 @@ SDK下载
 
 2、支持maven 和 pod 依赖，集成方法参看[移动端集成文档](/cn.zh-CN/低延时直播/移动端集成文档.md)。
 
-移动端RTS 网络SDK发布历史 
--------------------------------------
-
-
-
-|  版本   |     日期     |                                         说明                                          |
-|-------|------------|-------------------------------------------------------------------------------------|
-| 1.3.0 | 2020.09.29 | 1、独立发版 2、实时状态回调 3、错误码整理 4、修复部分稳定性问题 |
-
-
-
-
-
-直播移动端RTS播放器已和点播播放器合并，您可以直接参考点播播放器文档。[播放器SDK产品说明](https://help.aliyun.com/document_detail/125579.html)。Web端RTS播放器单独提供，请参考下面说明文档。
-
-客户端播放器SDK下载 
---------------------------------
-
-
-
-|    客户端    |                                     说明文档                                      |                                                                           下载地址                                                                            |
-|-----------|-------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| iOS下载     | [集成ARTC](https://help.aliyun.com/document_detail/134720.html) | [5.2.1](https://alivc-demo-cms.alicdn.com/versionProduct/sourceCode/playVideo/5.2.1/ApsaraVideo_videoPlay_v5.2.1_iOS_20200930.zip)        |
-| Android下载 | [集成ARTC](https://help.aliyun.com/document_detail/134721.html) | [5.2.1](https://alivc-demo-cms.alicdn.com/versionProduct/sourceCode/playVideo/5.2.1/ApsaraVideo_videoPlay_v5.2.1_Android_20200930.zip)    |
-| Web下载     | [集成ARTC](https://help.aliyun.com/document_detail/177370.html) | [1.2.2，](https://g.alicdn.com/AliRTC/H5RTSSdk/1.2.2/aliyun-rts-sdk.js)[npm](https://www.npmjs.com/package/aliyun-rts-sdk) |
-
-
+3、RtsSDK配合阿里云播放器sdk使用更加方便，需要符合版本对应关系。[播放器SDK产品说明](https://help.aliyun.com/document_detail/125579.html)。Web端RTS播放器单独提供，请参考下面说明文档。
 
 移动端 播放器SDK 发布历史 
 ------------------------------------
