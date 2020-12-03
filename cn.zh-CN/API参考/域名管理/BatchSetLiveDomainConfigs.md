@@ -69,7 +69,7 @@ Functions格式如下：
  disable：disable等于on的时候表示忽略所有参数，off不忽略 |
 |**aliauth**：阿里鉴权
 
-|auth\_type：鉴权类型，取值范围"no\_auth","type\_a","type\_b","type\_c"；
+|auth\_type：鉴权类型，取值范围"no\_auth","type\_a"；
 
  auth\_key1：鉴权key1；auth\_key2：鉴权key2；
 
